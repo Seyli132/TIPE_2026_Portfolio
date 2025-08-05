@@ -22,6 +22,19 @@
             border-radius: 8px;
             border: 1px solid #ccc;
         }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #2980b9;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -34,22 +47,30 @@
 
     <p>Bienvenue sur mon portfolio TIPE. Ce projet a pour objectif de stabiliser des systèmes de différentes complexité afin d'approcher l'étude de robots humanoïdes. Vous trouverez ici des vidéos illustrant les différentes étapes de mon travail.</p>
 
-    <section>
+    <nav>
+      <a href="#video1">Vidéo 1</a>
+      <a href="#video2">Vidéo 2</a>
+    </nav>
+
+    <section id="video1">
         <h2>Vidéo 1 : Présentation du système</h2>
         <video controls>
             <source src="videos/presentation.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Cette vidéo présente le robot bipède et le contexte du projet.</p>
+        <p><a href="#" style="color:#2980b9;">↑ Revenir en haut</a></p>
     </section>
 
-    <section>
+    <section id="video2">
         <h2>Vidéo 2 : Test de stabilisation</h2>
         <video controls>
             <source src="videos/test_stabilisation.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Test montrant la stabilisation en action, avec explications des capteurs utilisés.</p>
+        <p><a href="#" style="color:#2980b9;">↑ Revenir en haut</a></p>
     </section>
 </body>
 </html>
+
