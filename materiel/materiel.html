@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Liste du matériel utilisé - Portfolio TIPE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .materiel-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+        }
+        .materiel-item img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .description {
+            max-width: 550px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste du matériel utilisé</h1>
+
+    <section>
+        <h2>Contrôle</h2>
+
+        <div class="materiel-item">
+            <img src="arduino_uno.jpeg" alt="Carte Arduino Uno WiFi" />
+            <div class="description">
+                <h3>Carte Arduino Uno WiFi</h3>
+                <p>Carte microcontrôleur utilisée pour piloter le système et gérer la communication WiFi.</p>
+            </div>
+        </div>
+
+        <div class="materiel-item">
+            <img src="arduino_motorshield.jpeg" alt="Carte Arduino Motor Shield Rev3" />
+            <div class="description">
+                <h3>Carte Arduino Motor Shield Rev3</h3>
+                <p>Carte d'extension permettant de contrôler des moteurs à courant continu avec l'Arduino.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Expérience numéro 1</h2>
+
+        <div class="materiel-item">
+            <img src="lego.jpeg" alt="Lego" />
+            <div class="description">
+                <h3>Legos</h3>
+                <p>Eléments Lego utilisés pour construire la structure du prototype.</p>
+            </div>
+        </div>
+
+        <div class="materiel-item">
+            <img src="lego_motor_M.jpeg" alt="Moteur Lego M" />
+            <div class="description">
+                <h3>Moteur Lego M</h3>
+                <p>Moteur utilisé pour la motorisation des pièces mobiles du prototype Lego.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
