@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio TIPE - [DAOUDI Ilyes]</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; background-color: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        video { max-width: 100%; height: auto; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        section { margin-bottom: 40px; }
+        p { line-height: 1.5; }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-row img {
+            max-width: 48%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio TIPE - Stabilisation de robots anthropomorphes</h1>
+
+    <div class="image-row">
+        <img src="Boston_Dynamics_atlas.jpg" alt="Robot humanoïde vue de face" />
+        <img src="photo_equilibre.jpg" alt="Schéma du système de stabilisation" />
+    </div>
+
+    <p>Bienvenue sur mon portfolio TIPE. Ce projet a pour objectif de stabiliser des systèmes de différentes complexité afin d'approcher l'étude de robots humanoïdes. Vous trouverez ici des vidéos illustrant les différentes étapes de mon travail.</p>
+
+    <section>
+        <h2>Vidéo 1 : Présentation du système</h2>
+        <video controls>
+            <source src="videos/presentation.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture de vidéo HTML5.
+        </video>
+        <p>Cette vidéo présente le robot bipède et le contexte du projet.</p>
+    </section>
+
+    <section>
+        <h2>Vidéo 2 : Test de stabilisation</h2>
+        <video controls>
+            <source src="videos/test_stabilisation.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture de vidéo HTML5.
+        </video>
+        <p>Test montrant la stabilisation en action, avec explications des capteurs utilisés.</p>
+    </section>
+</body>
+</html>
