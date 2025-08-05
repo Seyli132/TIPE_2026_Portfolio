@@ -68,15 +68,18 @@
             border: 1px solid #ccc;
         }
         .back-to-top {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 12px;
+            display: block;
+            width: max-content;
+            margin: 40px auto 20px;
+            padding: 10px 20px;
             background-color: #1abc9c;
             color: white;
             border-radius: 5px;
+            text-align: center;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
         .back-to-top:hover {
             background-color: #16a085;
@@ -92,7 +95,7 @@
         <a href="#video5">Vidéo 5</a>
     </nav>
 
-    <h1>Portfolio TIPE - Stabilisation de robots anthropomorphes</h1>
+    <h1 id="top">Portfolio TIPE - Stabilisation de robots anthropomorphes</h1>
 
     <div class="image-row">
         <img src="Boston_Dynamics_atlas.jpg" alt="Robot humanoïde vue de face" />
@@ -108,7 +111,6 @@
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Cette vidéo présente le robot bipède et le contexte du projet.</p>
-        <a href="#top" class="back-to-top">↑ Revenir en haut</a>
     </section>
 
     <section id="video2">
@@ -118,7 +120,6 @@
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Test montrant la stabilisation en action, avec explications des capteurs utilisés.</p>
-        <a href="#top" class="back-to-top">↑ Revenir en haut</a>
     </section>
 
     <section id="video3">
@@ -128,7 +129,6 @@
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Présentation détaillée des capteurs et de leur rôle dans la stabilisation.</p>
-        <a href="#top" class="back-to-top">↑ Revenir en haut</a>
     </section>
 
     <section id="video4">
@@ -138,7 +138,6 @@
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Explications sur l’algorithme utilisé pour stabiliser le robot.</p>
-        <a href="#top" class="back-to-top">↑ Revenir en haut</a>
     </section>
 
     <section id="video5">
@@ -148,9 +147,12 @@
             Votre navigateur ne supporte pas la lecture de vidéo HTML5.
         </video>
         <p>Conclusion des tests et pistes pour améliorer le projet.</p>
-        <a href="#top" class="back-to-top">↑ Revenir en haut</a>
     </section>
+
+    <a href="#top" class="back-to-top">↑ Revenir en haut</a>
+
 </body>
 </html>
+
 
 
