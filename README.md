@@ -8,6 +8,11 @@ L’objectif de ce projet est d’étudier et de mettre en œuvre des solutions 
 
 Ce projet s’inscrit dans le thème 2026 **"Cycles et boucles"**, à travers l’analyse de systèmes asservis, de boucles de rétroaction et de contrôles cycliques.
 
+## 🌐 Accès en ligne
+
+Le portfolio est hébergé via **GitHub Pages** et accessible ici :  
+🔗 [https://seyli132.github.io/TIPE_2026_Portfolio](https://seyli132.github.io/TIPE_2026_Portfolio)
+
 ## 📁 Contenu du portfolio
 
 Le portfolio est constitué d’une page HTML contenant :
@@ -16,11 +21,6 @@ Le portfolio est constitué d’une page HTML contenant :
 - Des vidéos de démonstration et d’explication
 - Des images illustratives du système
 - D’éventuels liens vers des ressources externes (code, schémas, rapport...)
-
-## 🌐 Accès en ligne
-
-Le portfolio est hébergé via **GitHub Pages** et accessible ici :  
-🔗 [https://seyli132.github.io/TIPE_2026_Portfolio](https://seyli132.github.io/TIPE_2026_Portfolio)
 
 ## 📌 Auteur
 
