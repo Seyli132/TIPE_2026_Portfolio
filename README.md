@@ -1,6 +1,6 @@
-# TIPE 2026 – Portfolio interactif
+# TIPE 2026 – Portfolio 
 
-Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation de robots anthropomorphes"**. Il a pour but de présenter mon travail sous forme visuelle et interactive aux membres du jury.
+Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation de robots anthropomorphes"**. Il a pour but de présenter mon travail sous forme visuelle et de proposer des ressources vidéos aux membres du jury dans le cadre des concours des classes préparatoires aux grandes écoles.
 
 ## 🎯 Sujet du TIPE
 
@@ -24,6 +24,6 @@ Le portfolio est hébergé via **GitHub Pages** et accessible ici :
 
 ## 📌 Auteur
 
-- **DAOUDI Ilyes**
+- **DAOUDI Ilyes Azouz**
 - CPGE PSI – TIPE 2026
 - GitHub : [Seyli132](https://github.com/Seyli132)
