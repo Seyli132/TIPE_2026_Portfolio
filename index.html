@@ -6,20 +6,20 @@
     <title>Portfolio TIPE - [DAOUDI Ilyes]</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-        /* Même taille pour les deux images sur écran moyen et grand */
-        .same-size-img {
-            width: 100%;
-            height: 300px; /* hauteur fixe sur PC */
-            object-fit: cover; /* recadre sans déformer */
+        /* Fixe une hauteur max identique pour les deux images sans rognage */
+        .same-size {
+            max-width: 100%;
+            height: auto;       /* Pas de déformation */
+            max-height: 350px;  /* Hauteur max identique */
+            display: block;
+            margin: auto;       /* Centrage horizontal */
         }
-
-        /* Sur petit écran : hauteur auto pour ne pas écraser */
-        @media (max-width: 576px) {
-            .same-size-img {
-                height: auto;
-            }
+        /* Optionnel : centrer verticalement les colonnes avec images */
+        .image-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -50,11 +50,11 @@
 
     <!-- Images -->
     <div class="row g-3 mb-4">
-        <div class="col-md-6">
-            <img src="Boston_Dynamics_atlas.jpg" class="img-fluid rounded shadow-sm same-size-img" alt="Robot humanoïde vue de face">
+        <div class="col-md-6 image-col">
+            <img src="Boston_Dynamics_atlas.jpg" class="same-size rounded shadow-sm" alt="Robot humanoïde vue de face">
         </div>
-        <div class="col-md-6">
-            <img src="photo_equilibre.jpg" class="img-fluid rounded shadow-sm same-size-img" alt="Schéma du système de stabilisation">
+        <div class="col-md-6 image-col">
+            <img src="photo_equilibre.jpg" class="same-size rounded shadow-sm" alt="Schéma du système de stabilisation">
         </div>
     </div>
 
@@ -113,3 +113,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
