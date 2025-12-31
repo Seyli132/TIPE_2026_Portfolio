@@ -1,6 +1,6 @@
 # TIPE 2026 – Portfolio 
 
-Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation de robots anthropomorphes"**. Il a pour but de présenter mon travail sous forme visuelle et de proposer des ressources vidéos aux membres du jury dans le cadre des concours des classes préparatoires aux grandes écoles.
+Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation dynamique des robots anthropomorphes : étude par régulation inertielle d’un pendule inversé et critères de capturabilité"**. Il a pour but de présenter mon travail sous forme visuelle et de proposer des ressources vidéos aux membres du jury dans le cadre des concours des classes préparatoires aux grandes écoles.
 
 ## 🎯 Sujet du TIPE
 
