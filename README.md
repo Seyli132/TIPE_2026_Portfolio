@@ -17,7 +17,8 @@ Le projet s’inscrit dans le thème 2026 **"Cycles et boucles"**, via l’analy
 Le système étudié comprend : un **robot bipède**, un **pendule inversé**, et des **schémas de liaisons** pour analyser les interactions mécaniques et énergétiques.  
 
 ## . Chaine d'énergie et d'information
-![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.jpeg)
+![Chaines d'énergie et d'information](https://github.com/Seyli132/TIPE_2026_Portfolio/blob/e3796c95c76e0bff0c0f610528d449237a22821b/images/chaine_energie_chaine_info.jpeg)
+
 
 Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, des actionneurs aux capteurs, jusqu’au contrôle inertiel.  
 
