@@ -17,18 +17,18 @@ Le projet s’inscrit dans le thème 2026 **"Cycles et boucles"**, via l’analy
 Le système étudié comprend : un **robot bipède**, un **pendule inversé**, et des **schémas de liaisons** pour analyser les interactions mécaniques et énergétiques.  
 
 ## . Chaine d'énergie et d'information
-![Chaines d'énergie et d'information](https://github.com/Seyli132/TIPE_2026_Portfolio/blob/207b3c7a8f0272479dd431ef7910bfac63eccb7e/schema_cinematique.jpeg)
+![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.jpg)
 
 
 Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, des actionneurs aux capteurs, jusqu’au contrôle inertiel.  
 
 ## . Graphe des liaisons
-![Graphe des liaisons](graphe_des_liaisons.jpeg)  
+![Graphe des liaisons](images/graphe_des_liaisons.jpg)  
 
 Ce graphe montre **les relations entre les différents éléments mécaniques** et leurs liaisons dans le robot. Il permet de modéliser le système pour l’analyse dynamique.  
 
 ## . Schéma cinématique
-![Schéma cinématique](https://github.com/Seyli132/TIPE_2026_Portfolio/blob/207b3c7a8f0272479dd431ef7910bfac63eccb7e/schema_cinematique.jpeg)  
+![Schéma cinématique](images/schema_cinematique.jpg)  
 
 Le schéma cinématique représente **la géométrie et les mouvements possibles** du robot, utile pour les calculs d’équilibre et la simulation des trajectoires.  
 
