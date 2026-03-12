@@ -23,7 +23,7 @@ Le système étudié comprend : un **robot bipède**, un **pendule inversé**, e
 Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, des actionneurs aux capteurs, jusqu’au contrôle inertiel.  
 
 ## . Graphe des liaisons
-![Graphe des liaisons](images/graphe_des_liaisons.jpeg)  
+![Graphe des liaisons](graphe_des_liaisons.jpeg)  
 
 Ce graphe montre **les relations entre les différents éléments mécaniques** et leurs liaisons dans le robot. Il permet de modéliser le système pour l’analyse dynamique.  
 
