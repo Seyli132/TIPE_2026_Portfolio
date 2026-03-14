@@ -14,56 +14,72 @@ Le projet s’inscrit dans le thème 2026 **"Cycles et boucles"**, via l’analy
 
 # . Présentation du système
 
-Le système étudié comprend : un **robot bipède**, un **pendule inversé**, et des **schémas de liaisons** pour analyser les interactions mécaniques et énergétiques.  
+Le système étudié comprend : un **robot bipède**, un **pendule inversé**, et des **schémas de liaisons** permettant d’analyser les interactions mécaniques et énergétiques.
+
+---
 
 ## . Chaine d'énergie et d'information
-![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.jpg)
-![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.pdf)
 
+<p align="center">
+<img src="images/chaine_energie_chaine_info.jpg" width="900">
+</p>
 
-Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, des actionneurs aux capteurs, jusqu’au contrôle inertiel.  
+Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, depuis les actionneurs jusqu’aux capteurs, ainsi que les boucles de contrôle nécessaires à la stabilisation.
+
+---
 
 ## . Graphe des liaisons
-![Graphe des liaisons](images/graphe_des_liaisons.jpg)  
 
-Ce graphe montre **les relations entre les différents éléments mécaniques** et leurs liaisons dans le robot. Il permet de modéliser le système pour l’analyse dynamique.  
+<p align="center">
+<img src="images/graphe_des_liaisons.jpg" width="900">
+</p>
+
+Ce graphe représente **les relations entre les différents éléments mécaniques** du système. Il permet d’identifier les liaisons cinématiques et de structurer la modélisation dynamique.
+
+---
 
 ## . Schéma cinématique
-![Schéma cinématique](images/schema_cinematique.jpg)  
 
-Le schéma cinématique représente **la géométrie et les mouvements possibles** du robot, utile pour les calculs d’équilibre et la simulation des trajectoires.  
+<p align="center">
+<img src="images/schema_cinematique.jpg" width="900">
+</p>
+
+Le schéma cinématique décrit **la géométrie du mécanisme et les degrés de liberté du système**, base indispensable pour l’analyse du mouvement et l’étude de la stabilité.
 
 ---
 
 # . Analyse et méthodologie
 
-- **Modélisation dynamique** : le pendule inversé est utilisé comme modèle simplifié pour comprendre la stabilisation.  
-- **Régulation inertielle** : utilisation de capteurs et d’algorithmes pour corriger en temps réel l’angle du robot.  
-- **Capturabilité** : critères permettant d’évaluer si le robot peut se stabiliser après un déséquilibre.  
-- **Boucles de contrôle cycliques** : étude des rétroactions, délais et gains pour assurer la stabilité.  
+- **Modélisation dynamique** : le pendule inversé est utilisé comme modèle simplifié pour étudier la stabilisation.  
+- **Régulation inertielle** : mise en œuvre d’algorithmes de contrôle permettant de corriger en temps réel l’orientation du système.  
+- **Capturabilité** : étude des conditions permettant au robot de retrouver l’équilibre après une perturbation.  
+- **Boucles de contrôle** : analyse des systèmes asservis et des effets des paramètres de régulation.
 
-> Cette approche relie théorie et expérimentation, en combinant modèles mathématiques et mesures physiques.
+Cette approche combine **modélisation mathématique, analyse mécanique et validation expérimentale**.
 
 ---
 
 # . Accès en ligne
 
-Le portfolio complet est hébergé via **GitHub Pages** :  
-[https://seyli132.github.io/TIPE_2026_Portfolio](https://seyli132.github.io/TIPE_2026_Portfolio)
+Le portfolio est accessible via GitHub Pages :
+
+https://seyli132.github.io/TIPE_2026_Portfolio
 
 ---
 
 # . Contenu du portfolio
 
 - Présentation générale du projet  
-- Vidéos de démonstration et explications  
-- Images et schémas explicatifs du système  
-- Ressources externes : codes, schémas, rapports
+- Vidéos de démonstration et d’explication  
+- Schémas et illustrations du système étudié  
+- Ressources complémentaires (codes, modélisation, documentation)
 
 ---
 
 # . Auteur
 
-- **DAOUDI Ilyes Azouz**  
-- CPGE PSI – TIPE 2026  
-- GitHub : [Seyli132](https://github.com/Seyli132)
+DAOUDI Ilyes Azouz  
+CPGE PSI – TIPE 2026  
+
+GitHub :  
+https://github.com/Seyli132
