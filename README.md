@@ -18,6 +18,7 @@ Le système étudié comprend : un **robot bipède**, un **pendule inversé**, e
 
 ## . Chaine d'énergie et d'information
 ![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.jpg)
+![Chaines d'énergie et d'information](images/chaine_energie_chaine_info.pdf)
 
 
 Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, des actionneurs aux capteurs, jusqu’au contrôle inertiel.  
