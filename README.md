@@ -4,9 +4,12 @@
 <img src="images/image_presentation.jpg" width="900">
 </p>
 
-<p align="center">
-<a href="https://seyli132.github.io/TIPE_2026_Portfolio" style="font-size:20px; font-weight:bold; color:#1f6feb;">
-Accéder aux vidéos expérimentales du portfolio
+
+### Accès direct au portfolio
+
+➡️ **[Ouvrir le portfolio TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
+
+---
 </a>
 </p>
 
