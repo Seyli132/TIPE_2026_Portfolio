@@ -1,5 +1,15 @@
 # . TIPE 2026 – Portfolio
 
+<p align="center">
+<img src="images/image_presentation.jpg" width="900">
+</p>
+
+### Accès direct au portfolio
+
+➡️ **[Ouvrir le portfolio TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
+
+---
+
 Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation dynamique des robots anthropomorphes : étude par régulation inertielle d’un pendule inversé et critères de capturabilité"**.  
 Il présente mon travail sous forme visuelle et propose des ressources vidéos et images aux membres du jury des concours CPGE.
 
@@ -56,14 +66,6 @@ Le schéma cinématique décrit **la géométrie du mécanisme et les degrés de
 - **Boucles de contrôle** : analyse des systèmes asservis et des effets des paramètres de régulation.
 
 Cette approche combine **modélisation mathématique, analyse mécanique et validation expérimentale**.
-
----
-
-# . Accès en ligne
-
-Le portfolio est accessible via GitHub Pages :
-
-https://seyli132.github.io/TIPE_2026_Portfolio
 
 ---
 
