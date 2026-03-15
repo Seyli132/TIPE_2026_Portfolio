@@ -4,29 +4,38 @@
 <img src="images/image_presentation.jpg" width="900">
 </p>
 
-### Accès direct au portfolio
-
-➡️ **[Ouvrir le portfolio TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
+<p align="center">
+<a href="https://seyli132.github.io/TIPE_2026_Portfolio">
+<img src="https://img.shields.io/badge/Ouvrir%20le%20Portfolio%20TIPE-0A66C2?style=for-the-badge&logo=github&logoColor=white">
+</a>
+</p>
 
 ---
 
-Ce dépôt contient le portfolio en ligne de mon TIPE 2026, intitulé **"Stabilisation dynamique des robots anthropomorphes : étude par régulation inertielle d’un pendule inversé et critères de capturabilité"**.  
-Il présente mon travail sous forme visuelle et propose des ressources vidéos et images aux membres du jury des concours CPGE.
+Ce dépôt présente le portfolio de mon **TIPE 2026**, consacré à l’étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d’inertie**.
+
+Ce travail s’inscrit dans le thème **Cycles et Boucles** à travers l’analyse d’une **boucle de rétroaction inertielle** permettant de stabiliser un système instable.
 
 ---
 
 # . Sujet du TIPE
 
-L’objectif de ce projet est d’étudier et de mettre en œuvre des solutions de **stabilisation pour robots bipèdes**, inspirés des robots humanoïdes.  
-Le projet s’inscrit dans le thème 2026 **"Cycles et boucles"**, via l’analyse de systèmes asservis, de boucles de rétroaction et de contrôles cycliques.
+**Stabilisation dynamique de robots anthropomorphes : étude par régulation inertielle à volant d'inertie d’un pendule inversé et critères de capturabilité.**
+
+Le pendule inversé constitue un modèle de référence pour l’étude de la stabilisation des systèmes instables.  
+Dans ce projet, la stabilisation est réalisée par un **volant d’inertie de réaction**, qui génère un couple stabilisant par redistribution du moment cinétique interne.
+
+Cette approche permet d’analyser les principes fondamentaux de la stabilisation posturale utilisés en **robotique humanoïde**.
 
 ---
 
-# . Présentation du système
+# . Problématique
 
-Le système étudié comprend : un **robot bipède**, un **pendule inversé**, et des **schémas de liaisons** permettant d’analyser les interactions mécaniques et énergétiques.
+**Dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle, et quels critères physiques permettent de décider du recours à un déplacement du support ?**
 
 ---
+
+# . Architecture du système
 
 ## . Chaine d'énergie et d'information
 
@@ -34,7 +43,10 @@ Le système étudié comprend : un **robot bipède**, un **pendule inversé**, e
 <img src="images/chaine_energie_chaine_info.jpg" width="900">
 </p>
 
-Ce schéma illustre la **transmission d'énergie et d'information** dans le robot bipède, depuis les actionneurs jusqu’aux capteurs, ainsi que les boucles de contrôle nécessaires à la stabilisation.
+Ce schéma présente l’architecture fonctionnelle du système, distinguant :
+
+- la **chaine d’énergie**, responsable de l’action mécanique
+- la **chaine d’information**, comprenant capteurs, commande et traitement du signal.
 
 ---
 
@@ -44,7 +56,9 @@ Ce schéma illustre la **transmission d'énergie et d'information** dans le robo
 <img src="images/graphe_des_liaisons.jpg" width="900">
 </p>
 
-Ce graphe représente **les relations entre les différents éléments mécaniques** du système. Il permet d’identifier les liaisons cinématiques et de structurer la modélisation dynamique.
+Le graphe des liaisons décrit la structure mécanique du système et les interactions entre les différents solides.
+
+Il constitue la base de la **modélisation cinématique et dynamique**.
 
 ---
 
@@ -54,27 +68,43 @@ Ce graphe représente **les relations entre les différents éléments mécaniqu
 <img src="images/schema_cinematique.jpg" width="900">
 </p>
 
-Le schéma cinématique décrit **la géométrie du mécanisme et les degrés de liberté du système**, base indispensable pour l’analyse du mouvement et l’étude de la stabilité.
+Le schéma cinématique permet de représenter les **degrés de liberté** et les relations de mouvement nécessaires à l’établissement du modèle dynamique.
 
 ---
 
-# . Analyse et méthodologie
+# . Démarche scientifique
 
-- **Modélisation dynamique** : le pendule inversé est utilisé comme modèle simplifié pour étudier la stabilisation.  
-- **Régulation inertielle** : mise en œuvre d’algorithmes de contrôle permettant de corriger en temps réel l’orientation du système.  
-- **Capturabilité** : étude des conditions permettant au robot de retrouver l’équilibre après une perturbation.  
-- **Boucles de contrôle** : analyse des systèmes asservis et des effets des paramètres de régulation.
+Le travail s’articule autour de trois axes principaux :
 
-Cette approche combine **modélisation mathématique, analyse mécanique et validation expérimentale**.
+**1. Modélisation dynamique**
+
+Établissement du modèle du pendule inversé à volant d’inertie à partir des équations de la dynamique.
+
+**2. Stabilisation par asservissement**
+
+Conception d’une **boucle de rétroaction en position angulaire** permettant la stabilisation autour de la position verticale.
+
+**3. Analyse des limites physiques**
+
+Étude des limitations liées :
+
+- à la saturation du moteur  
+- aux contraintes énergétiques  
+- à la vitesse maximale du volant d’inertie.
+
+Ces limites conduisent à introduire un **critère de capturabilité**, inspiré du concept de **Capture Point** utilisé en robotique humanoïde.
 
 ---
 
 # . Contenu du portfolio
 
-- Présentation générale du projet  
-- Vidéos de démonstration et d’explication  
-- Schémas et illustrations du système étudié  
-- Ressources complémentaires (codes, modélisation, documentation)
+Le portfolio présente :
+
+- la modélisation du système  
+- les schémas mécaniques et fonctionnels  
+- les protocoles expérimentaux  
+- les résultats expérimentaux et simulations  
+- les ressources visuelles associées.
 
 ---
 
