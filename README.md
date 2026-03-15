@@ -5,16 +5,16 @@
 </p>
 
 <p align="center">
-<a href="https://seyli132.github.io/TIPE_2026_Portfolio">
-<img src="https://img.shields.io/badge/Ouvrir%20le%20Portfolio%20TIPE-0A66C2?style=for-the-badge&logo=github&logoColor=white">
+<a href="https://seyli132.github.io/TIPE_2026_Portfolio" style="font-size:20px; font-weight:bold; color:#1f6feb;">
+Accéder aux vidéos expérimentales du portfolio
 </a>
 </p>
 
 ---
 
-Ce dépôt présente le portfolio de mon **TIPE 2026**, consacré à l’étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d’inertie**.
+Ce dépôt présente les éléments principaux de mon **TIPE 2026**, consacré à l’étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d’inertie**.
 
-Ce travail s’inscrit dans le thème **Cycles et Boucles** à travers l’analyse d’une **boucle de rétroaction inertielle** permettant de stabiliser un système instable.
+Le **portfolio associé** rassemble uniquement les **vidéos expérimentales du projet**, permettant d’illustrer les essais réalisés et le comportement du système étudié.
 
 ---
 
@@ -45,7 +45,7 @@ Cette approche permet d’analyser les principes fondamentaux de la stabilisatio
 
 Ce schéma présente l’architecture fonctionnelle du système, distinguant :
 
-- la **chaine d’énergie**, responsable de l’action mécanique
+- la **chaine d’énergie**, responsable de l’action mécanique  
 - la **chaine d’information**, comprenant capteurs, commande et traitement du signal.
 
 ---
@@ -98,13 +98,13 @@ Ces limites conduisent à introduire un **critère de capturabilité**, inspiré
 
 # . Contenu du portfolio
 
-Le portfolio présente :
+Le portfolio contient uniquement :
 
-- la modélisation du système  
-- les schémas mécaniques et fonctionnels  
-- les protocoles expérimentaux  
-- les résultats expérimentaux et simulations  
-- les ressources visuelles associées.
+- les **vidéos expérimentales du système**
+- les **démonstrations de stabilisation**
+- les **tests expérimentaux réalisés sur la maquette**
+
+Ces ressources visuelles complètent le dossier scientifique du TIPE.
 
 ---
 
