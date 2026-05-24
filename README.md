@@ -1,34 +1,31 @@
 # . TIPE 2026 – Portfolio
 
-<p align="center">
-<img src="images/image_presentation.jpg" width="900">
-</p>
-
-
-### Accès direct au portfolio
-
-➡️ **[Ouvrir le portfolio TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
-
 ---
-</a>
-</p>
+
+<div align="center">
+
+## Accès au Portfolio
+
+### ➡️ **[Ouvrir le portfolio TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
+
+</div>
 
 ---
 
-Ce dépôt présente les éléments principaux de mon **TIPE 2026**, consacré à l’étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d’inertie**.
+Ce dépôt présente les éléments principaux de mon **TIPE 2026**, consacré à l'étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d'inertie**.
 
-Le **portfolio associé** rassemble uniquement les **vidéos expérimentales du projet**, permettant d’illustrer les essais réalisés et le comportement du système étudié.
+Le **portfolio associé** rassemble uniquement les **vidéos expérimentales du projet**, permettant d'illustrer les essais réalisés et le comportement du système étudié.
 
 ---
 
 # . Sujet du TIPE
 
-**Stabilisation dynamique de robots anthropomorphes : étude par régulation inertielle à volant d'inertie d’un pendule inversé et critères de capturabilité.**
+**Stabilisation dynamique de robots anthropomorphes : étude par régulation inertielle à volant d'inertie d'un pendule inversé et critères de capturabilité.**
 
-Le pendule inversé constitue un modèle de référence pour l’étude de la stabilisation des systèmes instables.  
-Dans ce projet, la stabilisation est réalisée par un **volant d’inertie de réaction**, qui génère un couple stabilisant par redistribution du moment cinétique interne.
+Le pendule inversé constitue un modèle de référence pour l'étude de la stabilisation des systèmes instables.  
+Dans ce projet, la stabilisation est réalisée par un **volant d'inertie de réaction**, qui génère un couple stabilisant par redistribution du moment cinétique interne.
 
-Cette approche permet d’analyser les principes fondamentaux de la stabilisation posturale utilisés en **robotique humanoïde**.
+Cette approche permet d'analyser les principes fondamentaux de la stabilisation posturale utilisés en **robotique humanoïde**.
 
 ---
 
@@ -46,10 +43,9 @@ Cette approche permet d’analyser les principes fondamentaux de la stabilisatio
 <img src="images/chaine_energie_chaine_info.jpg" width="900">
 </p>
 
-Ce schéma présente l’architecture fonctionnelle du système, distinguant :
-
-- la **chaine d’énergie**, responsable de l’action mécanique  
-- la **chaine d’information**, comprenant capteurs, commande et traitement du signal.
+Ce schéma présente l'architecture fonctionnelle du système, distinguant :
+- la **chaine d'énergie**, responsable de l'action mécanique  
+- la **chaine d'information**, comprenant capteurs, commande et traitement du signal.
 
 ---
 
@@ -59,8 +55,7 @@ Ce schéma présente l’architecture fonctionnelle du système, distinguant :
 <img src="images/graphe_des_liaisons.jpg" width="900">
 </p>
 
-Le graphe des liaisons décrit la structure mécanique du système et les interactions entre les différents solides.
-
+Le graphe des liaisons décrit la structure mécanique du système et les interactions entre les différents solides.  
 Il constitue la base de la **modélisation cinématique et dynamique**.
 
 ---
@@ -71,29 +66,25 @@ Il constitue la base de la **modélisation cinématique et dynamique**.
 <img src="images/schema_cinematique.jpg" width="900">
 </p>
 
-Le schéma cinématique permet de représenter les **degrés de liberté** et les relations de mouvement nécessaires à l’établissement du modèle dynamique.
+Le schéma cinématique permet de représenter les **degrés de liberté** et les relations de mouvement nécessaires à l'établissement du modèle dynamique.
 
 ---
 
 # . Démarche scientifique
 
-Le travail s’articule autour de trois axes principaux :
+Le travail s'articule autour de trois axes principaux :
 
-**1. Modélisation dynamique**
+**1. Modélisation dynamique**  
+Établissement du modèle du pendule inversé à volant d'inertie à partir des équations de la dynamique.
 
-Établissement du modèle du pendule inversé à volant d’inertie à partir des équations de la dynamique.
+**2. Stabilisation par asservissement**  
+Conception d'une **boucle de rétroaction en position angulaire** permettant la stabilisation autour de la position verticale.
 
-**2. Stabilisation par asservissement**
-
-Conception d’une **boucle de rétroaction en position angulaire** permettant la stabilisation autour de la position verticale.
-
-**3. Analyse des limites physiques**
-
+**3. Analyse des limites physiques**  
 Étude des limitations liées :
-
 - à la saturation du moteur  
 - aux contraintes énergétiques  
-- à la vitesse maximale du volant d’inertie.
+- à la vitesse maximale du volant d'inertie.
 
 Ces limites conduisent à introduire un **critère de capturabilité**, inspiré du concept de **Capture Point** utilisé en robotique humanoïde.
 
@@ -102,7 +93,6 @@ Ces limites conduisent à introduire un **critère de capturabilité**, inspiré
 # . Contenu du portfolio
 
 Le portfolio contient uniquement :
-
 - les **vidéos expérimentales du système**
 - les **démonstrations de stabilisation**
 - les **tests expérimentaux réalisés sur la maquette**
@@ -115,6 +105,4 @@ Ces ressources visuelles complètent le dossier scientifique du TIPE.
 
 DAOUDI Ilyes Azouz  
 CPGE PSI – TIPE 2026  
-
-GitHub :  
-https://github.com/Seyli132
+GitHub : https://github.com/Seyli132
