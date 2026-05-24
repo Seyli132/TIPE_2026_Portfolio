@@ -10,7 +10,7 @@
 
     <style>
         body {
-            padding-top: 80px; /* compense la navbar fixed */
+            padding-top: 80px;
             background: linear-gradient(135deg, #eef2f7, #dbe7f5);
         }
 
@@ -91,11 +91,19 @@
             background-color: #000;
         }
 
-        /* === JUSTIFICATION DU TEXTE INTRODUCTIF === */
+        /* JUSTIFICATION DU TEXTE INTRODUCTIF */
         .justify-text {
             text-align: justify;
             text-justify: inter-word;
             hyphens: auto;
+        }
+
+        /* VIDÉO 1 : limitée en largeur sur desktop */
+        .video-desktop-limit {
+            max-width: 700px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
         }
 
     </style>
@@ -130,7 +138,7 @@
             DAOUDI ILYES <br>
             <span class="subtitle-part">
                 Stabilisation dynamique de robots anthropomorphes <br>
-                Étude par régulation inertielle à volant d’inertie d’un pendule inversé
+                Étude par régulation inertielle à volant d'inertie d'un pendule inversé
                 et critères de capturabilité
             </span>
         </h1>
@@ -146,11 +154,11 @@
         </div>
     </div>
 
-    <!-- PARAGRAPHE JUSTIFIÉ -->
+    <!-- PARAGRAPHE INTRODUCTIF -->
     <p class="mb-4 justify-text">
         Bienvenue sur mon portfolio TIPE. Ce projet a pour objectif de répondre à la problématique suivante : <br>
         Dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par
-        une boucle de rétroaction inertielle à volant d’inertie, et quels critères physiques permettent de décider
+        une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider
         du recours à un déplacement du support ?
     </p>
 
@@ -160,35 +168,42 @@
         </a>
     </p>
 
-
-</section>
-    <!-- Vidéos -->
+    <!-- Vidéo 1 -->
     <section id="video1" class="mb-5">
-        <h2>Vidéo 1</h2>
+        <h2>Vidéo 1 : Réponse à un signal PRBS pour identification</h2>
 
-        <video class="w-100 rounded shadow-sm"
-               controls
-               playsinline>
-           
-            <source src="videos/system_identification_mesures.mp4"
-                    type="video/mp4" />
+        <div class="video-desktop-limit rounded shadow-sm overflow-hidden mb-3">
+            <video class="w-100"
+                   controls
+                   playsinline>
+                <source src="videos/system_identification_mesures.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+        </div>
 
-            Votre navigateur ne supporte pas les vidéos HTML5.
-        </video>
-
-</section>
-    <section id="video2" class="mb-5">
-        <h2>Vidéo 2 : Stabilisation par volant d'inertie</h2>
-        <video class="w-100 rounded shadow-sm" controls>
-            <source src="videos/presentation.mp4" type="video/mp4" />
-        </video>
-        <p>Test du contrôle de l'équilibre du robot par volant d'inertie.</p>
+        <p class="justify-text">
+            Réponse du pendule à un signal Pseudo Random Binary Signals (PRBS) pour identifier la fonction de
+            transfert du pendule simple motorisé via le module System Identification Toolbox de MATLAB, et en
+            déduire la fonction de transfert du pendule inversé.
+        </p>
     </section>
 
+    <!-- Vidéo 2 -->
+    <section id="video2" class="mb-5">
+        <h2>Vidéo 2 : Stabilisation par volant d'inertie</h2>
+        <video class="w-100 rounded shadow-sm" controls playsinline>
+            <source src="videos/presentation.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+        <p class="mt-2">Test du contrôle de l'équilibre du robot par volant d'inertie.</p>
+    </section>
+
+    <!-- Vidéo 3 -->
     <section id="video3" class="mb-5">
         <h2>Vidéo 3 : Limites du volant d'inertie</h2>
-        <video class="w-100 rounded shadow-sm" controls>
+        <video class="w-100 rounded shadow-sm" controls playsinline>
             <source src="videos/test_stabilisation.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
     </section>
 
