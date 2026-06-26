@@ -1,4 +1,4 @@
-# 🧠 TIPE 2026 – Stabilisation dynamique d’un pendule inversé
+#  TIPE 2026 – Stabilisation dynamique d’un pendule inversé
 
 ---
 
@@ -123,9 +123,8 @@ Le portfolio est **le cœur du projet expérimental**.
 Il contient exclusivement :
 
 - 🎬 vidéos de tests expérimentaux
-- ⚙️ démonstrations de stabilisation du pendule
-- 📊 réponses du système à différents signaux
-- 🧪 validation expérimentale du modèle
+- 📊 réponses du système à un signal PRBS 
+- 🧪 tentative de stabilisation à partir du modèle obtenu
 
 ---
 
@@ -140,7 +139,7 @@ Ce site a été conçu comme une **plateforme de validation expérimentale** :
 
 ---
 
-## 🔥 Importance dans le projet
+##  Importance dans le projet
 
 Le portfolio constitue la **preuve expérimentale centrale du TIPE**.
 
@@ -162,7 +161,7 @@ Ce TIPE propose une étude complète :
 
 ---
 
-# 👨‍🔬 Auteur
+#  Auteur
 
 **DAOUDI Ilyes Azouz**  
 CPGE PSI – TIPE 2026  
