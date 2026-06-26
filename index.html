@@ -5,228 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio TIPE - DAOUDI Ilyes</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* =========================
-           BASE
-        ========================= */
         body {
             padding-top: 80px;
-            background: linear-gradient(135deg, #eef2f7, #e9eef6);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            color: #1a1a1a;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #eef2f7, #dbe7f5);
         }
 
-        /* =========================
-           NAVBAR
-        ========================= */
+        /* NAVBAR */
         .navbar {
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* =========================
-           TITRE
-        ========================= */
+        /* CADRE TITRE */
         .title-box {
-            background: linear-gradient(135deg, #0f2a4a, #1f4b7a);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             margin-bottom: 40px;
         }
 
         .main-title {
-            font-weight: 700;
+            font-weight: 600;
             font-size: 2rem;
             line-height: 1.3;
+            margin: 0;
         }
 
         .subtitle-part {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 300;
-            opacity: 0.95;
-        }
-
-        /* =========================
-           SECTIONS (SAFE GITHUB PAGES)
-        ========================= */
-        section {
-            background: white;
-            padding: 28px;
-            border-radius: 16px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================
-           TITRES
-        ========================= */
-        h2 {
-            color: #0f2a4a;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        /* =========================
-           IMAGES
-        ========================= */
-        .same-size {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            border-radius: 14px;
         }
 
         @media (max-width: 768px) {
-            .same-size {
-                height: 240px;
-            }
-
             .main-title {
                 font-size: 1.4rem;
             }
-
             .subtitle-part {
                 font-size: 1rem;
             }
         }
 
-        /* =========================
-           VIDÉO
-        ========================= */
-        .video-desktop-limit {
-            max-width: 750px;
+        /* IMAGES */
+        .same-size {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            display: block;
             margin: auto;
         }
 
-        /* =========================
-           TEXTE
-        ========================= */
-        .justify-text {
-            text-align: justify;
-            line-height: 1.6;
-            font-size: 1.05rem;
+        .image-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* =========================
-           BOUTONS
-        ========================= */
+        section[id] {
+            scroll-margin-top: 90px;
+        }
+
+        /* Sections vidéos */
+        section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
         .btn-dark {
-            background-color: #0f2a4a;
+            background-color: #24292e;
             border: none;
         }
 
         .btn-dark:hover {
-            background-color: #061524;
+            background-color: #000;
         }
+
+        /* JUSTIFICATION DU TEXTE INTRODUCTIF */
+        .justify-text {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+
+        /* VIDÉO 1 : limitée en largeur sur desktop */
+        .video-desktop-limit {
+            max-width: 700px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 
 <body id="top">
 
-<!-- NAV -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#top">TIPE - Stabilisation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#video1">Vidéo 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="#video2">Vidéo 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="#video3">Vidéo 3</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
+<!-- Contenu principal -->
 <div class="container">
 
-    <!-- TITLE -->
+    <!-- TITRE -->
     <div class="title-box text-center">
         <h3>Portfolio TIPE</h3>
         <h1 class="main-title">
             DAOUDI ILYES <br>
             <span class="subtitle-part">
-                Stabilisation dynamique de robots anthropomorphes
+                Stabilisation dynamique de robots anthropomorphes <br>
+                Étude par régulation inertielle à volant d'inertie d'un pendule inversé
+                et critères de capturabilité
             </span>
         </h1>
     </div>
 
-    <!-- IMAGES -->
+    <!-- Images -->
     <div class="row g-3 mb-4">
-        <div class="col-md-6">
-            <img src="Boston_Dynamics_atlas.jpg" class="same-size shadow-sm" alt="">
+        <div class="col-md-6 image-col">
+            <img src="Boston_Dynamics_atlas.jpg" class="same-size rounded shadow-sm" alt="Robot humanoïde vue de face">
         </div>
-        <div class="col-md-6">
-            <img src="photo_equilibre.jpg" class="same-size shadow-sm" alt="">
+        <div class="col-md-6 image-col">
+            <img src="photo_equilibre.jpg" class="same-size rounded shadow-sm" alt="Schéma du système de stabilisation">
         </div>
     </div>
 
-    <!-- INTRO -->
-    <section>
-        <h2>Introduction</h2>
+    <!-- PARAGRAPHE INTRODUCTIF -->
+    <p class="mb-4 justify-text">
+        Bienvenue sur mon portfolio TIPE. Ce projet a pour objectif de répondre à la problématique suivante : <br>
+        Dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par
+        une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider
+        du recours à un déplacement du support ?
+    </p>
+
+    <p>
+        <a href="materiel/materiel.html" target="_blank" class="btn btn-outline-primary">
+            Liste complète du matériel utilisé
+        </a>
+    </p>
+
+    <!-- Vidéo 1 -->
+    <section id="video1" class="mb-5">
+        <h2>Vidéo 1 : Réponse à un signal PRBS pour identification</h2>
+
+        <div class="video-desktop-limit rounded shadow-sm overflow-hidden mb-3">
+            <video class="w-100"
+                   controls
+                   playsinline>
+                <source src="videos/system_identification_mesures.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+        </div>
+
         <p class="justify-text">
-            Étude de la stabilisation d’un pendule inversé par volant d’inertie...
+            Réponse du pendule à un signal Pseudo Random Binary Signals (PRBS) pour identifier la fonction de
+            transfert du pendule simple motorisé via le module System Identification Toolbox de MATLAB, pour enfin en
+            déduire la fonction de transfert du pendule inversé.
         </p>
     </section>
 
-    <!-- VIDÉO 1 -->
-    <section>
-        <h2>Vidéo 1</h2>
-
-        <div class="video-desktop-limit mb-3">
-            <video class="w-100" controls>
-                <source src="videos/system_identification_mesures.mp4" type="video/mp4">
+    <!-- Vidéo 2 --> 
+    <section id="video2" class="mb-5">
+        <h2>Vidéo 2 : Stabilisation par volant d'inertie</h2>
+        <div class="video-desktop-limit rounded shadow-sm overflow-hidden mb-3">
+            <video class="w-100"
+                   controls
+                   playsinline>
+                <source src="videos/premier_essai_stabilisation .mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas les vidéos HTML5.
             </video>
-        </div>
-    </section>
-
-    <!-- VIDÉO 2 -->
-    <section>
-        <h2>Vidéo 2</h2>
-
-        <div class="video-desktop-limit mb-3">
-            <video class="w-100" controls>
-                <source src="videos/premier_essai_stabilisation.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
-
-    <!-- GITHUB -->
+        <p class="justify-text">
+            Test de stabilisation du pendule inversé à volant d'inertie à l'aide du modèle théorique dans l'approximation des petits angles.
+        </p>
+        
+            
+    <!-- Bouton GitHub -->
     <div class="text-center my-4">
-        <a href="https://github.com/Seyli132/TIPE_2026_Portfolio"
+        <a href="https://github.com/Seyli132/TIPE_2026_Portfolio?tab=readme-ov-file"
            target="_blank"
            class="btn btn-dark btn-lg">
-            Voir GitHub
+            Voir le dépôt GitHub du projet
+        </a>
+    </div>
+
+    <!-- Bouton retour haut -->
+    <div class="text-center my-3">
+        <a href="#top" class="btn btn-success btn-lg">
+            ↑ Revenir en haut
         </a>
     </div>
 
 </div>
 
-<!-- =========================
-     SAFE SCROLL ANIMATION
-========================= -->
-<script>
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, {
-    threshold: 0.15
-});
-
-sections.forEach(s => observer.observe(s));
-</script>
-
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
