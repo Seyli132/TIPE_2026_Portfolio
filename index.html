@@ -1,167 +1,233 @@
-/* =========================
-   BASE
-========================= */
-body {
-    padding-top: 80px;
-    background: linear-gradient(135deg, #eef2f7, #e9eef6);
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color: #1a1a1a;
-    overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio TIPE - DAOUDI Ilyes</title>
 
-/* =========================
-   NAVBAR PREMIUM
-========================= */
-.navbar {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    backdrop-filter: blur(8px);
-}
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-/* =========================
-   TITRE STYLE CENTRALE / MINES
-========================= */
-.title-box {
-    background: linear-gradient(135deg, #0f2a4a, #1f4b7a);
-    color: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-    margin-bottom: 40px;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: fadeUp 0.8s ease-out forwards;
-}
+    <style>
+        /* =========================
+           BASE
+        ========================= */
+        body {
+            padding-top: 80px;
+            background: linear-gradient(135deg, #eef2f7, #e9eef6);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
 
-.main-title {
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.3;
-}
+        /* =========================
+           NAVBAR
+        ========================= */
+        .navbar {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
 
-.subtitle-part {
-    font-size: 1.1rem;
-    font-weight: 300;
-    opacity: 0.95;
-}
+        /* =========================
+           TITRE
+        ========================= */
+        .title-box {
+            background: linear-gradient(135deg, #0f2a4a, #1f4b7a);
+            color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            margin-bottom: 40px;
+        }
 
-/* =========================
-   SECTIONS STYLE PREMIUM
-========================= */
-section {
-    background: white;
-    padding: 28px;
-    border-radius: 16px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
-    margin-bottom: 40px;
+        .main-title {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
 
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s ease;
-}
+        .subtitle-part {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
 
-/* activation scroll */
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        /* =========================
+           SECTIONS (SAFE GITHUB PAGES)
+        ========================= */
+        section {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
 
-/* =========================
-   TITRES SECTIONS
-========================= */
-h2 {
-    color: #0f2a4a;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
 
-/* =========================
-   IMAGES PREMIUM
-========================= */
-.same-size {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.same-size:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+        /* =========================
+           TITRES
+        ========================= */
+        h2 {
+            color: #0f2a4a;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
 
-/* =========================
-   VIDÉO
-========================= */
-.video-desktop-limit {
-    max-width: 750px;
-    margin: auto;
-}
+        /* =========================
+           IMAGES
+        ========================= */
+        .same-size {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
 
-/* =========================
-   TEXTE JUSTIFIÉ PROPRE
-========================= */
-.justify-text {
-    text-align: justify;
-    hyphens: auto;
-    line-height: 1.6;
-    font-size: 1.05rem;
-}
+        @media (max-width: 768px) {
+            .same-size {
+                height: 240px;
+            }
 
-/* =========================
-   BOUTONS PREMIUM
-========================= */
-.btn-dark {
-    background-color: #0f2a4a;
-    border: none;
-}
+            .main-title {
+                font-size: 1.4rem;
+            }
 
-.btn-dark:hover {
-    background-color: #061524;
-}
+            .subtitle-part {
+                font-size: 1rem;
+            }
+        }
 
-.btn-outline-primary {
-    border-color: #0f2a4a;
-    color: #0f2a4a;
-}
+        /* =========================
+           VIDÉO
+        ========================= */
+        .video-desktop-limit {
+            max-width: 750px;
+            margin: auto;
+        }
 
-.btn-outline-primary:hover {
-    background-color: #0f2a4a;
-    color: white;
-}
+        /* =========================
+           TEXTE
+        ========================= */
+        .justify-text {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
 
-/* =========================
-   ANIMATION
-========================= */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* =========================
+           BOUTONS
+        ========================= */
+        .btn-dark {
+            background-color: #0f2a4a;
+            border: none;
+        }
 
-/* =========================
-   MOBILE OPTIMISÉ
-========================= */
-@media (max-width: 768px) {
+        .btn-dark:hover {
+            background-color: #061524;
+        }
+    </style>
+</head>
 
-    .main-title {
-        font-size: 1.4rem;
-    }
+<body id="top">
 
-    .subtitle-part {
-        font-size: 1rem;
-    }
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#top">TIPE - Stabilisation</a>
+    </div>
+</nav>
 
-    .same-size {
-        height: 240px;
-    }
+<div class="container">
 
-    section {
-        padding: 18px;
-    }
-}
+    <!-- TITLE -->
+    <div class="title-box text-center">
+        <h3>Portfolio TIPE</h3>
+        <h1 class="main-title">
+            DAOUDI ILYES <br>
+            <span class="subtitle-part">
+                Stabilisation dynamique de robots anthropomorphes
+            </span>
+        </h1>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-6">
+            <img src="Boston_Dynamics_atlas.jpg" class="same-size shadow-sm" alt="">
+        </div>
+        <div class="col-md-6">
+            <img src="photo_equilibre.jpg" class="same-size shadow-sm" alt="">
+        </div>
+    </div>
+
+    <!-- INTRO -->
+    <section>
+        <h2>Introduction</h2>
+        <p class="justify-text">
+            Étude de la stabilisation d’un pendule inversé par volant d’inertie...
+        </p>
+    </section>
+
+    <!-- VIDÉO 1 -->
+    <section>
+        <h2>Vidéo 1</h2>
+
+        <div class="video-desktop-limit mb-3">
+            <video class="w-100" controls>
+                <source src="videos/system_identification_mesures.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- VIDÉO 2 -->
+    <section>
+        <h2>Vidéo 2</h2>
+
+        <div class="video-desktop-limit mb-3">
+            <video class="w-100" controls>
+                <source src="videos/premier_essai_stabilisation.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- GITHUB -->
+    <div class="text-center my-4">
+        <a href="https://github.com/Seyli132/TIPE_2026_Portfolio"
+           target="_blank"
+           class="btn btn-dark btn-lg">
+            Voir GitHub
+        </a>
+    </div>
+
+</div>
+
+<!-- =========================
+     SAFE SCROLL ANIMATION
+========================= -->
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
