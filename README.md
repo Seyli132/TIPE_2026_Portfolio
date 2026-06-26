@@ -1,169 +1,139 @@
-# TIPE 2026 – Stabilisation dynamique d'un pendule inversé
+# TIPE 2026 – Stabilisation dynamique d’un pendule inversé
 
 ---
 
-<div align="center">
+## Accès au portfolio expérimental
 
-## Accès direct au Portfolio (EXPÉRIMENTAL)
+https://seyli132.github.io/TIPE_2026_Portfolio
 
-### **[OUVRIR LE PORTFOLIO TIPE](https://seyli132.github.io/TIPE_2026_Portfolio)**
-
-<p><b>Ce site contient les vidéos expérimentales et démonstrations du système</b></p>
-
-</div>
+Ce site regroupe les vidéos expérimentales et les démonstrations du système physique étudié.
 
 ---
 
-# Objectif du dépôt
+# 1. Résumé du projet
 
-Ce dépôt présente les éléments principaux de mon **TIPE 2026**, consacré à l'étude de la **stabilisation dynamique des robots anthropomorphes** à partir du modèle du **pendule inversé à volant d'inertie**.
+Ce TIPE étudie la stabilisation dynamique de robots anthropomorphes à travers le modèle du pendule inversé couplé à un volant d’inertie.
 
-Le **site associé constitue la partie centrale du projet** : il regroupe les **expérimentations, vidéos et démonstrations physiques** du système étudié.
+L’objectif est d’analyser les conditions de stabilisation d’un système instable et de distinguer les situations où une régulation inertielle est suffisante de celles nécessitant une stratégie de récupération de l’équilibre.
 
----
-
-# Abstract (Research Paper Style)
-
-Ce projet étudie la stabilisation d'un système instable de type **pendule inversé**, via une **régulation inertielle par volant d'inertie**.
-
-L'objectif est de comprendre les conditions de stabilisation d'un système fortement non linéaire et de comparer deux stratégies :
-- stabilisation interne par couple inertiel
-- stabilisation par déplacement du support
-
-L'approche combine :
-- modélisation dynamique Lagrangienne
+Le travail repose sur une approche combinant :
+- modélisation mécanique (Lagrange)
 - identification expérimentale
-- asservissement en boucle fermée
-- analyse des limites énergétiques et structurelles
+- commande en boucle fermée
+- analyse des limites physiques
 
 ---
 
-# Key Contributions
+# 2. Problématique
 
-- Modélisation complète d'un pendule inversé motorisé
-- Implémentation d'une stabilisation par volant d'inertie
+Dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle, et quels critères physiques permettent de décider du recours à un déplacement du support ?
+
+---
+
+# 3. Contributions
+
+- Modélisation d’un pendule inversé motorisé à volant d’inertie
+- Mise en œuvre d’une stabilisation par régulation inertielle
 - Identification expérimentale du système réel
-- Introduction d'un critère de **capturabilité**
-- Analyse des limites physiques (saturation, énergie, vitesse)
+- Étude des limites physiques (saturation, énergie, vitesse)
+- Introduction d’un critère de capturabilité basé sur le Capture Point
 
 ---
 
-# Architecture du système
+# 4. Démarche scientifique
 
-## Chaîne d'énergie et d'information
+## 4.1 Modélisation
+Formulation du système par la mécanique lagrangienne et analyse de la dynamique sous-actionnée.
 
-<p align="center">
-<img src="images/chaine_energie_chaine_info.jpg" width="900">
-</p>
+## 4.2 Commande
+Stabilisation par boucle fermée en position angulaire utilisant un volant d’inertie comme actionneur de couple interne.
 
-Ce schéma présente l'architecture fonctionnelle du système :
-- **chaîne d'énergie** : action mécanique et conversion
-- **chaîne d'information** : capteurs, traitement et commande
+## 4.3 Limites physiques
+Analyse des contraintes :
+- saturation des actionneurs
+- énergie disponible
+- vitesse maximale du volant
+
+---
+
+# 5. Architecture du système
+
+## Chaîne d’énergie et d’information
+
+![Chaîne énergie et information](images/chaine_energie_chaine_info.jpg)
 
 ---
 
 ## Graphe des liaisons
 
-<p align="center">
-<img src="images/graphe_des_liaisons.jpg" width="900">
-</p>
-
-Structure mécanique du système et interactions entre solides.
-Base de la modélisation dynamique.
+![Graphe des liaisons](images/graphe_des_liaisons.jpg)
 
 ---
 
 ## Schéma cinématique
 
-<p align="center">
-<img src="images/schema_cinematique.jpg" width="900">
-</p>
-
-Représentation des degrés de liberté et relations de mouvement.
+![Schéma cinématique](images/schema_cinematique.jpg)
 
 ---
 
-# Démarche scientifique
+# 6. Portfolio expérimental
 
-Le travail s'articule autour de trois axes :
+https://seyli132.github.io/TIPE_2026_Portfolio
 
-### 1. Modélisation dynamique
-Établissement du modèle du pendule inversé à volant d'inertie.
+Le portfolio constitue la partie expérimentale centrale du projet.
 
-### 2. Stabilisation par asservissement
-Boucle de rétroaction en position angulaire autour de la verticale.
-
-### 3. Analyse des limites physiques
-Étude des contraintes :
-- saturation moteur
-- énergie disponible
-- vitesse du volant d'inertie
-
-Introduction d'un **critère de capturabilité** inspiré de la robotique humanoïde.
+Il contient :
+- tests de stabilisation
+- réponses à excitation PRBS
+- validation du modèle identifié
 
 ---
 
-# PORTFOLIO EXPÉRIMENTAL (ÉLÉMENT CENTRAL)
+# 7. Critère de capturabilité
+
+L’étude introduit un critère inspiré du Capture Point permettant de distinguer :
+- les états stabilisables par action inertielle
+- les états nécessitant une stratégie de déplacement du support (push recovery)
+
+Ce critère permet de relier la commande inertielle à des concepts de robotique humanoïde.
 
 ---
 
-<div align="center">
+# 8. Bibliographie
 
-## ACCÈS DIRECT AU PORTFOLIO
+[1] J. Pratt et al., *Capture Point: A Step toward Humanoid Push Recovery*, ICHR, 2006.  
+https://doi.org/10.1109/ICHR.2006.321385  
 
-### **[CLIQUER ICI POUR VOIR LES EXPÉRIENCES](https://seyli132.github.io/TIPE_2026_Portfolio)**
+[2] J. R. C. Vasconcelos et al., *Design and Control of a Flywheel Inverted Pendulum System*.  
 
-</div>
+[3] M. Olivares, P. Albertos, *Linear control of the flywheel inverted pendulum*, Systems & Control Letters, 2013.  
+https://doi.org/10.1016/j.sysconle.2013.05.010  
 
----
+[4] A. Chemori et al., *Le pendule inversé stabilisé par volant d’inertie*.  
+https://www.academia.edu/23380289  
 
-## Contenu du portfolio
+[5] R. Olfati-Saber, *Global Stabilization of a Flat Underactuated System*.  
 
-Le portfolio est **le cœur du projet expérimental**.
-Il contient exclusivement :
-
-- vidéos de tests expérimentaux
-- réponses du système à un signal PRBS
-- tentative de stabilisation à partir du modèle obtenu
+[6] O. Boubaker, R. Iriarte, *The Inverted Pendulum in Control Theory and Robotics*.
 
 ---
 
-## Rôle du portfolio
+# 9. Chronologie du projet (DOT)
 
-Ce site a été conçu comme une **plateforme de validation expérimentale** :
-
-Il permet de relier :
-- modèle théorique
-- résultats numériques
-- comportement réel du système
-
----
-
-## Importance dans le projet
-
-Le portfolio constitue la **preuve expérimentale centrale du TIPE**.
-
-Il illustre :
-- la dynamique réelle du système
-- les limites de stabilisation
-- les performances de la régulation inertielle
-
----
-
-# Synthèse du projet
-
-Ce TIPE propose une étude complète :
-
-- théorie (modélisation)
-- pratique (expérimentation)
-- validation (vidéos)
-- analyse des limites (capturabilité)
+- Août 2025 : choix du thème (robotique et stabilisation)
+- Septembre 2025 : réduction au modèle du pendule inversé
+- Octobre 2025 : étude bibliographique
+- Décembre 2025 : définition de la problématique et modélisation Matlab
+- Janvier 2026 : conception de la maquette et premiers tests
+- Février 2026 : échanges avec des chercheurs en robotique
+- Mai 2026 : finalisation des expérimentations
+- Juin 2026 : analyse finale et validation du modèle
 
 ---
 
 # Auteur
 
-**DAOUDI Ilyes Azouz**
-CPGE PSI – TIPE 2026
+DAOUDI Ilyes Azouz  
+CPGE PSI – TIPE 2026  
 
-GitHub : https://github.com/Seyli132
+GitHub: https://github.com/Seyli132
