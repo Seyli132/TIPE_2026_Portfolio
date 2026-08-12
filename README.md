@@ -124,8 +124,7 @@ https://www.academia.edu/23380289
 - Septembre 2025 : réduction au modèle du pendule inversé
 - Octobre 2025 : étude bibliographique
 - Décembre 2025 : définition de la problématique et modélisation Matlab
-- Janvier 2026 : conception de la maquette et premiers tests
-- Février 2026 : échanges avec des chercheurs en robotique
+- Janvier 2026 / Février 2026 : conception de la maquette et premiers tests
 - Mai 2026 : finalisation des expérimentations
 - Juin 2026 : analyse finale et validation du modèle
 
