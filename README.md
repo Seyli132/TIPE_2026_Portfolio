@@ -1,138 +1,282 @@
-# TIPE 2026 – Stabilisation dynamique d’un pendule inversé
+# 🔄 Stabilisation d'un pendule inversé par volant d'inertie
+
+### TIPE 2026 — CPGE PSI — Thème « Cycles & Boucles »
+
+![MATLAB](https://img.shields.io/badge/MATLAB-System%20Identification%20Toolbox-orange)
+![Python](https://img.shields.io/badge/Python-NumPy%20%7C%20pandas%20%7C%20Matplotlib-3776AB?logo=python&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-Uno%20R4%20WiFi-00878F?logo=arduino&logoColor=white)
+![Automatique](https://img.shields.io/badge/Automaticien-Asservissement%20%7C%20Routh%20%7C%20Bode-8A2BE2)
+
+> **Problématique :** dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider du recours à un déplacement du support ?
+
+**En une phrase :** j'ai conçu une maquette de pendule inversé stabilisé par volant d'inertie (*reaction wheel*), identifié son modèle dynamique expérimentalement, synthétisé une commande en cascade implémentée en temps réel sur microcontrôleur, puis délimité — par Monte-Carlo — la frontière entre les perturbations rattrapables sans bouger le support et celles qui exigent un pas de récupération (*push recovery*).
+
+🎬 **Portfolio et vidéos expérimentales :** https://seyli132.github.io/TIPE_2026_Portfolio/
 
 ---
 
-## Accès au portfolio expérimental
+## 🌍 Contexte — pourquoi ce sujet ?
 
-https://seyli132.github.io/TIPE_2026_Portfolio
+Les robots humanoïdes comme Atlas sont structurellement instables : leur équilibre se réduit à un pendule inversé qu'il faut compenser en permanence. Deux stratégies existent : une **réaction inertielle interne** (volant d'inertie) ou un **déplacement du support** (faire un pas). Ce projet détermine quand l'une suffit et quand l'autre s'impose.
 
-Ce site regroupe les vidéos expérimentales et les démonstrations du système physique étudié.
+<p>
+  <img src="Boston_Dynamics_atlas.jpg" width="42%" alt="Robot humanoïde Atlas (Boston Dynamics), exemple de système instable en équilibre dynamique">
+  <img src="photo_equilibre.jpg" width="42%" alt="Maquette du pendule inversé à volant d'inertie en position d'équilibre">
+</p>
 
----
+## 🖼️ La maquette
+   Composant | Rôle dans la chaîne |
+ |---|---|
+ | MPU-6500 (gyroscope + accéléromètre) | Mesure de l'angle θ et de la vitesse angulaire θ̇ |
+ | MCC + volant d'inertie | Actionneur : crée un couple interne par réaction inertielle |
+ | Arduino Uno R4 WiFi + motor shield | Calcule les correcteurs en temps réel (Te = 20 ms) et pilote le moteur en PWM |
+ | Batterie 9 V | Alimentation |
+ | Structure Lego | Châssis du pendule |
 
-# 1. Résumé du projet
+<p>
+  <img src="materiel/capteur%20MPU%206500.png" width="23%" alt="Capteur gyroscopique MPU-6500">
+  <img src="materiel/arduino_uno.jpeg" width="23%" alt="Carte Arduino Uno R4 WiFi">
+  <img src="materiel/arduino_motorshield.jpeg" width="23%" alt="Arduino motor shield">
+  <img src="materiel/lego_motor_M.jpeg" width="23%" alt="Moteur Lego et volant d'inertie">
+</p>
 
-Ce TIPE étudie la stabilisation dynamique de robots anthropomorphes à travers le modèle du pendule inversé couplé à un volant d’inertie.
-
-L’objectif est d’analyser les conditions de stabilisation d’un système instable et de distinguer les situations où une régulation inertielle est suffisante de celles nécessitant une stratégie de récupération de l’équilibre.
-
-Le travail repose sur une approche combinant :
-- modélisation mécanique (Lagrange)
-- identification expérimentale
-- commande en boucle fermée
-- analyse des limites physiques
-
----
-
-# 2. Problématique
-
-Dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle, et quels critères physiques permettent de décider du recours à un déplacement du support ?
-
----
-
-# 3. Contributions
-
-- Modélisation d’un pendule inversé motorisé à volant d’inertie
-- Mise en œuvre d’une stabilisation par régulation inertielle
-- Identification expérimentale du système réel
-- Étude des limites physiques (saturation, énergie, vitesse)
-- Introduction d’un critère de capturabilité basé sur le Capture Point
+## 📐 Architecture du système
+ | Chaîne d'énergie et d'information | Graphe des liaisons | Schéma cinématique |
+ |---|---|---|
+ | ![](images/chaine_energie_chaine_info.jpg) | ![](images/graphe_des_liaisons.jpg) | ![](images/schema_cinematique.jpg) |
 
 ---
 
-# 4. Démarche scientifique
+## 🧭 Démarche : une boucle complète, du modèle au critère de décision
 
-## 4.1 Modélisation
-Formulation du système par la mécanique lagrangienne et analyse de la dynamique sous-actionnée.
+```mermaid
+flowchart LR
+    A["Modèle analytique<br>TMD + linéarisation"] --> B["Identification expérimentale<br>PRBS + MATLAB"]
+    B --> C["Synthèse des correcteurs<br>Routh + Bode + avance de phase"]
+    C --> D["Implémentation embarquée<br>Tustin + filtres IMU"]
+    D --> E["Analyse des limites<br>saturation, portrait de phase"]
+    E --> F["Critère de capturabilité<br>Capture Point + Monte-Carlo"]
+```
 
-## 4.2 Commande
-Stabilisation par boucle fermée en position angulaire utilisant un volant d’inertie comme actionneur de couple interne.
+## 📘 Présentation détaillée du projet
 
-## 4.3 Limites physiques
-Analyse des contraintes :
-- saturation des actionneurs
-- énergie disponible
-- vitesse maximale du volant
+Chaque étape est dépliable : les diapositives du projet y sont commentées avec les résultats et justifications associés.
+
+<details>
+<summary><b>1. Problématique</b> — une question de décision, pas seulement de commande</summary>
+
+<br>
+
+![Problématique du TIPE](images/diapo05.png)
+
+Stabiliser un pendule inversé, tout le monde sait le faire avec un chariot. Ici, le support est **fixe** : la seule action disponible est le couple de réaction du volant d'inertie, exactement comme un humanoïde qui compenserait sans bouger les pieds. La question devient alors : *quand* cette action suffit-elle, et *quand* faut-il obligatoirement déplacer le support (faire un pas) ?
+
+</details>
+
+<details>
+<summary><b>2. Modélisation</b> — du pendule à volant d'inertie au schéma-bloc</summary>
+
+<br>
+
+![Pendule inversé à volant d'inertie : graphe des liaisons et schéma cinématique](images/diapo09.png)
+
+Système étudié : un pendule rigide articulé en O, surmonté d'un volant d'inertie entraîné par un moteur CC. Hypothèses : problème plan, approximation des petits angles. Le théorème du moment dynamique appliqué au volant (en A) puis à l'ensemble {pendule + volant} (en O), suivi d'une linéarisation, donne :
+
+$$\ddot{\theta} \approx \frac{mgh}{I_O}\,\theta - \frac{I_{2A}}{I_O}\,\ddot{\varphi}$$
+
+![Schéma-bloc du pendule inversé avec volant d'inertie](images/diapo11.png)
+
+Le schéma-bloc (moteur CC, capteur gyroscopique, mécanique couplée) aboutit à la fonction de transfert en boucle ouverte. Le modèle complet (4 pôles, 2 zéros) est réduit à **3 pôles / 2 zéros** en négligeant l'inductance du moteur — choix confirmé ensuite par l'identification.
+
+</details>
+
+<details>
+<summary><b>3. Identification expérimentale</b> — PRBS, MATLAB et validation physique du modèle</summary>
+
+<br>
+
+**L'astuce centrale du projet : on ne peut pas identifier directement un système instable.** Impossible d'exciter un pendule inversé autour de son équilibre de façon contrôlée : il tombe. Mais un **pendule simple** motorisé, lui, est stable — et possède exactement la même mécanique, le même moteur et le même capteur. Seule la contribution du poids change de signe. J'ai donc :
+
+1. identifié le modèle du pendule **stable** ;
+2. transposé au pendule inversé par **inversion du terme gravitaire** (les équations montrent que seul ce terme change de signe).
+
+![Deux maquettes : pendule simple et pendule inversé à volant d'inertie motorisé](images/diapo13.png)
+
+L'excitation utilise un signal **PRBS** (Pseudo Random Binary Sequence) : la commande moteur alterne aléatoirement entre deux valeurs, ce qui balaye toutes les fréquences d'intérêt en un seul essai. Le gyroscope enregistre la vitesse angulaire du pendule en réponse.
+
+![Excitation PRBS du moteur et vitesse angulaire mesurée](images/diapo14.png)
+
+Les fréquences sont choisies physiquement : fréquence propre f₀ ≈ 1,4 Hz ; f_max = 5 Hz (critère de Ljung, ≥ 2,5·f₀) ; échantillonnage f_e = 50 Hz, soit **Te = 20 ms** (Shannon appliqué avec une marge ×10).
+
+![Identification de la FTBO via la System Identification Toolbox de MATLAB](images/diapo16.png)
+
+Deux modèles candidats sont identifiés : **avec inductance** (4 pôles, 2 zéros) et **sans inductance** (3 pôles, 2 zéros). C'est la solution sans inductance qui est retenue : plus simple et suffisamment fidèle, elle confirme *a posteriori* la réduction analytique du modèle.
+
+![Modèles identifiés : avec inductance (4 pôles, 2 zéros) vs sans inductance (3 pôles, 2 zéros) — solution retenue](images/diapo17.png)
+
+La confrontation modèle théorique ↔ identification est éloquante : les formes coïncident, et l'inversion du signe du terme gravitaire entre pendule simple et pendule inversé se retrouve **exactement** dans les fonctions de transfert identifiées :
+
+$$\text{FTBO identifiée (pendule inversé, inductance négligée)}=\frac{-1{,}431\times 10^{-3}\,p}{1+0{,}2681\,p-0{,}01518\,p^{2}-1{,}192\times 10^{-4}\,p^{3}}$$
+
+![Modèle théorique vs identification MATLAB, pendule simple et inversé](images/diapo18.png)
+
+Dernier contrôle — le recoupement physique : les paramètres (masses, distances, résistance interne) sont mesurés avec leurs incertitudes. L'inertie équivalente du volant déduite de l'identification (6,08×10⁻⁴ kg·m²) est comparée à sa valeur théorique (6,99×10⁻⁴ kg·m²) → **écart de 13 %**, cohérent avec les incertitudes. Le modèle n'est pas seulement ajusté numériquement : il est validé par la physique. Fit global : **84,1 %** sur la vitesse angulaire mesurée.
+
+![Paramètres mesurés avec incertitudes et recoupement de l'inertie du volant](images/diapo19.png)
+
+</details>
+
+<details>
+<summary><b>4. Stabiliser la boucle</b> — échec du critère de Routh, puis validation</summary>
+
+<br>
+
+Premier constat, brutal : la FTBO identifiée du pendule inversé **échoue au critère de Routh-Hurwitz**. Aucun gain ne peut stabiliser la boucle fermée telle quelle — la stabilité ne peut pas venir de la plante.
+
+![FTBO instable : échec du critère de Routh](images/diapo20.png)
+
+La solution : une commande **en cascade**. Le correcteur interne du second ordre $C_{int}(p)=K_1\left(1+\frac{2\xi_0}{\omega_0}p+\frac{p^2}{\omega_0^2}\right)$ (K₁ = 40, ξ₀ = 1, ω₀ = 20 rad/s) restructure la FTBO, qui **valide alors le critère de Routh**.
+
+![FTBO corrigée : validation du critère de Routh](images/diapo21.png)
+
+La boucle externe se dimensionne ensuite sur le **diagramme de Bode** de la FTBO :
+
+![Diagramme de Bode de la FTBO](images/diapo23.png)
+
+**Cahier des charges :** rapidité — temps d'établissement < 0,1 s → ω_0dB = 35 rad/s ; stabilité — marge de phase **M_φ = 85°**. Pour l'atteindre, un correcteur à avance de phase $C(p)=K\,\frac{1+aTp}{1+Tp}$, avec les paramètres retenus K = 87,8 ; a = 1,514 ; T = 0,0232.
+
+![Cahier des charges et correcteur à avance de phase](images/diapo24.png)
+
+Le dimensionnement aboutit aux marges visées sur la FTBO corrigée :
+
+![Dimensionnement de l'avance de phase sur le diagramme de Bode](images/diapo25.png)
+
+</details>
+
+<details>
+<summary><b>5. Implémentation embarquée et essais</b> — ce qui marche, ce qui casse, et pourquoi</summary>
+
+<br>
+
+Sur l'Arduino Uno R4 WiFi (Te = 20 ms) : **fusion capteurs** par filtre complémentaire (α = 0,98) gyro/accéléromètre pour l'assiette θ, filtre passe-bas du 1er ordre pour θ̇ ; **discrétisation rigoureuse** des deux correcteurs par transformation bilinéaire (Tustin) → équations aux différences exécutées en temps réel.
+
+L'essai de stabilisation montre un pendule effectivement ramené vers l'équilibre… mais la stabilisation en régime permanent n'est pas maintenue : **emballement du volant** (rotation à vitesse constante saturée).
+
+![Essai de stabilisation : évolution temporelle (Te = 20 ms), emballement du volant](images/diapo28.png)
+
+Diagnostic des 4 causes :
+
+![Limites physiques : saturation, petits angles, frottement sec, bruit capteur](images/diapo30.png)
+
+1. saturation du moteur (limité à 9 V) ;
+2. approximation des petits angles ;
+3. frottement sec non négligeable (zone morte) ;
+4. bruit du gyroscope lors de l'acquisition.
+
+La simulation de la réponse à un couple perturbateur de 0,2 N·m confirme la saturation comme cause dominante :
+
+![Simulation : réponse à un couple perturbateur de 0,2 N·m](images/diapo31.png)
+
+Et le **portrait de phase** expérimental — chaque point coloré par la tension d'actionneur — rend la saturation directement visible : dès que la tension atteint 9 V (points saturés), la trajectoire dévie de la séparatrice.
+
+![Portrait de phase expérimental coloré par la tension d'actionneur](images/diapo32.png)
+
+🎥 Vidéos : [premier essai de stabilisation](videos/premier_essai_stabilisation%20.mp4) · [identification sur mesures réelles](videos/system_identification_mesures.mp4)
+
+</details>
+
+<details>
+<summary><b>6. Capturabilité</b> — quand faut-il bouger le support ?</summary>
+
+<br>
+
+Pour un humanoïde, le **polygone de support** (zone entre les pieds) délimite les positions rattrapables. Pour un pendule inversé, il se réduit à un **point** — c'est là que tout se joue.
+
+![Point de capture et polygone de support](images/diapo34.png)
+
+Le volant d'inertie rend ce point **dynamique** : la réaction inertielle déplace le point de capture, ce qui ouvre deux stratégies : stabiliser par action inertielle seule, ou rapprocher le point de capture et déclencher un pas (*push recovery*).
+
+![Critère et nécessité du push recovery](images/diapo36.png)
+
+La région de capture est calculée par **Monte-Carlo** (10 000 tirages) en propageant les incertitudes de mesure (masse, hauteur, ω₀) → séparatrice et frontières de capture avec bande de confiance à 95 %.
+
+![Région de capture théorique par Monte-Carlo (10 000 tirages)](images/diapo37.png)
+
+Confrontée aux **points expérimentaux**, la frontière tient : les essais tombent bien dans les zones prédites par le modèle linéaire.
+
+![Région de capture (modèle linéaire) et points expérimentaux](images/diapo38.png)
+
+Perspectives d'optimisation identifiées :
+
+![Perspectives : moteur et tension accrus, modèle non linéaire, frottement sec, structure PLA](images/diapo39.png)
+
+</details>
 
 ---
 
-# 5. Architecture du système
+## 🛠️ Compétences mobilisées
+ | Domaine | Éléments concrets |
+ |---|---|
+ | Automatique | Analyse harmonique (Bode), critère de Routh-Hurwitz, correcteurs en cascade, avance de phase, marges de stabilité |
+ | Identification expérimentale | Excitation PRBS, critères de Shannon-Nyquist et de Ljung, System Identification Toolbox (MATLAB) |
+ | Mécanique | Théorème du moment dynamique, linéarisation, inerties équivalentes, propagation d'incertitudes |
+ | Temps réel embarqué | Échantillonnage 50 Hz, discrétisation de Tustin, filtre complémentaire IMU, PWM moteur |
+ | Programmation | MATLAB, Python (NumPy, pandas, Matplotlib), C++ embarqué (Arduino) |
+ | Data / statistique | Méthode de Monte-Carlo, fit quantitatif de modèles sur mesures |
 
-## Chaîne d’énergie et d’information
+## 📁 Contenu du dépôt
+ | Dossier | Contenu |
+ |---|---|
+ | `index.html` | Portfolio en ligne (vidéos des essais, démonstrations) |
+ | `images/` | Schémas du système + exports des diapositives du projet (détaillées ci-dessus) |
+ | `materiel/` | Photos du matériel (capteur MPU-6500, Arduino, motor shield, moteur) |
+ | `videos/` | Essais expérimentaux (stabilisation, identification sur mesures) |
+ | `analysis/` | Scripts Python : portrait de phase, région de capture (Monte-Carlo) *(à pousser)* |
+ | `firmware/` | Croquis Arduino : filtres IMU + correcteurs discrétisés *(à pousser)* |
+ | `docs/` | Diaporama complet du projet *(à ajouter)* |
 
-![Chaîne énergie et information](images/chaine_energie_chaine_info.jpg)
+## 📅 Chronologie du projet
+ | Période | Étape |
+ |---|---|
+ | Août 2025 | Choix du thème (robotique et stabilisation) |
+ | Sept. 2025 | Réduction au modèle du pendule inversé |
+ | Oct. 2025 | Étude bibliographique |
+ | Déc. 2025 | Problématique et modélisation MATLAB |
+ | Janv.–Févr. 2026 | Conception de la maquette, premiers essais |
+ | Mai 2026 | Finalisation des expérimentations |
+ | Juin 2026 | Analyse finale et validation du modèle |
 
----
+## 📚 Bibliographie
 
-## Graphe des liaisons
-
-![Graphe des liaisons](images/graphe_des_liaisons.jpg)
-
----
-
-## Schéma cinématique
-
-![Schéma cinématique](images/schema_cinematique.jpg)
-
----
-
-# 6. Portfolio expérimental
-
-https://seyli132.github.io/TIPE_2026_Portfolio
-
-Le portfolio constitue la partie expérimentale centrale du projet.
-
-Il contient :
-- tests de stabilisation
-- réponses à excitation PRBS
-- validation du modèle identifié
-
----
-
-# 7. Critère de capturabilité
-
-L’étude introduit un critère inspiré du Capture Point permettant de distinguer :
-- les états stabilisables par action inertielle
-- les états nécessitant une stratégie de déplacement du support (push recovery)
-
-Ce critère permet de relier la commande inertielle à des concepts de robotique humanoïde.
-
----
-
-# 8. Bibliographie
-
-[1] J. Pratt et al., *Capture Point: A Step toward Humanoid Push Recovery*, ICHR, 2006.  
-https://doi.org/10.1109/ICHR.2006.321385  
-
-[2] J. R. C. Vasconcelos et al., *Design and Control of a Flywheel Inverted Pendulum System*.  
-
-[3] M. Olivares, P. Albertos, *Linear control of the flywheel inverted pendulum*, Systems & Control Letters, 2013.  
-https://doi.org/10.1016/j.sysconle.2013.05.010  
-
-[4] A. Chemori et al., *Le pendule inversé stabilisé par volant d’inertie*.  
-https://www.academia.edu/23380289  
-
-[5] R. Olfati-Saber, *Global Stabilization of a Flat Underactuated System*.  
-
+[1] J. Pratt et al., *Capture Point: A Step toward Humanoid Push Recovery*, ICHR, 2006 — https://doi.org/10.1109/ICHR.2006.321385
+[2] J. R. C. Vasconcelos et al., *Design and Control of a Flywheel Inverted Pendulum System*.
+[3] M. Olivares, P. Albertos, *Linear control of the flywheel inverted pendulum*, Systems & Control Letters, 2013 — https://doi.org/10.1016/j.sysconle.2013.05.010
+[4] A. Chemori et al., *Le pendule inversé stabilisé par volant d'inertie* — https://www.academia.edu/23380289
+[5] R. Olfati-Saber, *Global Stabilization of a Flat Underactuated System*.
 [6] O. Boubaker, R. Iriarte, *The Inverted Pendulum in Control Theory and Robotics*.
 
+## 📎 Annexes techniques
+
+<details>
+<summary><b>Chaîne fonctionnelle, circuit et démonstrations</b></summary>
+
+<br>
+ | Annexe | Contenu |
+ |---|---|
+ | [Chaîne fonctionnelle](images/diapo43.png) | De la mesure gyroscope à la commande moteur, vue d'ensemble |
+ | [Circuit électrique](images/diapo44.png) | MCC, motor shield, alimentation 9 V |
+ | [Équations du schéma-bloc](images/diapo45.png) | Théorèmes du moment dynamique et linéarisation |
+ | [Justification du signal PRBS](images/diapo46.png) | Choix des fréquences : critère de Ljung, Shannon-Nyquist, stratégie PWM |
+ | [Critère de Routh-Hurwitz](images/diapo47.png) | Condition de stabilité d'ordre 3 et ajustabilité des paramètres |
+ | [Justification de l'inertie rotorique](images/diapo48.png) | Loi des mailles au MCC et moment cinétique de l'arbre moteur |
+ | [Région de capture : démonstration et fit](images/diapo49.png) | Changement de variable, séparatrice, formule du fit |
+
+</details>
+
 ---
 
-# 9. Chronologie du projet (DOT)
+## 👤 Auteur
 
-- Août 2025 : choix du thème (robotique et stabilisation)
-- Septembre 2025 : réduction au modèle du pendule inversé
-- Octobre 2025 : étude bibliographique
-- Décembre 2025 : définition de la problématique et modélisation Matlab
-- Janvier 2026 / Février 2026 : conception de la maquette et premiers tests
-- Mai 2026 : finalisation des expérimentations
-- Juin 2026 : analyse finale et validation du modèle
+**DAOUDI Ilyes Azouz** — CPGE PSI — TIPE 2026
 
----
-
-# Auteur
-
-DAOUDI Ilyes Azouz  
-CPGE PSI – TIPE 2026  
-
-GitHub: https://github.com/Seyli132
+🎬 Portfolio : https://seyli132.github.io/TIPE_2026_Portfolio/
