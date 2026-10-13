@@ -9,27 +9,24 @@
   <img src="https://img.shields.io/badge/Automatique-Routh_%7C_Bode_%7C_Avance_de_phase-6A1B9A?style=flat-square">
 </p>
 
+<p align="center">
+  <img src="Boston_Dynamics_atlas.jpg" height="300" alt="Robot humanoïde Atlas, exemple de système structurellement instable en équilibre dynamique">
+  <img src="photo_equilibre.jpg" height="300" alt="Pierres empilées en équilibre précaire au bord de la mer, analogie du pendule inversé">
+</p>
+
+*Gauche : robot Atlas (© Boston Dynamics).*
+
 > **Problématique :** dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider du recours à un déplacement du support ?
 
-**En une phrase :** j'ai conçu une maquette de pendule inversé stabilisé par volant d'inertie (*reaction wheel*), identifié son modèle dynamique expérimentalement, synthétisé une commande en cascade implémentée en temps réel sur microcontrôleur, puis délimité — par Monte-Carlo — la frontière entre les perturbations rattrapables sans bouger le support et celles qui exigent un pas de récupération (*push recovery*).
-
 > [!IMPORTANT]
-> **Résultat principal.** Le pendule revient à l'équilibre et y est stabilisé en temps réel pendant environ 3,5 s ; la divergence coïncide avec la saturation du moteur à 9 V (emballement du volant). Le modèle identifié — fit de 84,1 % sur la vitesse angulaire — est recoupé à 13 % près par la physique, et la sortie de la région de capture calculée par Monte-Carlo coïncide avec cette saturation puis la divergence.
-
-**Portfolio et vidéos expérimentales :** https://seyli132.github.io/TIPE_2026_Portfolio/
+> **Portfolio et vidéos expérimentales :** https://seyli132.github.io/TIPE_2026_Portfolio/
+> Vous y trouverez la présentation complète du projet, les vidéos des essais de stabilisation et d'identification sur mesures réelles, ainsi que la maquette en fonctionnement.
 
 ---
 
 ## Pourquoi un pendule inversé ?
 
-Les robots humanoïdes comme Atlas sont structurellement instables : leur équilibre se réduit à un pendule inversé qu'il faut compenser en permanence. Deux stratégies existent : une **réaction inertielle interne** (volant d'inertie) ou un **déplacement du support** (faire un pas). Ce projet détermine quand l'une suffit et quand l'autre s'impose.
-
-<p>
-  <img src="Boston_Dynamics_atlas.jpg" height="260" alt="Robot humanoïde Atlas, exemple de système structurellement instable en équilibre dynamique">
-  <img src="photo_equilibre.jpg" height="260" alt="Pierres empilées en équilibre précaire au bord de la mer, analogie du pendule inversé">
-</p>
-
-*Gauche : robot Atlas (© Boston Dynamics). Droite : un équilibre précaire — chaque pierre est un pendule inversé.*
+Le pendule inversé est le modèle instable par excellence : fusée en vol, gyropode, robot humanoïde — d'innombrables systèmes d'ingénierie se ramènent à cette même dynamique instable qu'il faut compenser en permanence. Deux stratégies existent : une **réaction inertielle interne** (volant d'inertie) ou un **déplacement du support** (faire un pas). Ce projet détermine quand l'une suffit et quand l'autre s'impose.
 
 ## Banc d'essai : composants et rôles
 
@@ -43,10 +40,10 @@ Les robots humanoïdes comme Atlas sont structurellement instables : leur équil
  | Structure Lego | Châssis du pendule |
 
 <p>
-  <img src="materiel/capteur%20MPU%206500.png" width="23%" alt="Capteur gyroscopique MPU-6500">
-  <img src="materiel/arduino_uno.jpeg" width="23%" alt="Carte Arduino Uno R4 WiFi">
-  <img src="materiel/arduino_motorshield.jpeg" width="23%" alt="Arduino motor shield">
-  <img src="materiel/lego_motor_M.jpeg" width="23%" alt="Moteur Lego et volant d'inertie">
+  <img src="materiel/capteur%20MPU%206500.png" height="170" alt="Capteur gyroscopique MPU-6500">
+  <img src="materiel/arduino_uno.jpeg" height="170" alt="Carte Arduino Uno R4 WiFi">
+  <img src="materiel/arduino_motorshield.jpeg" height="170" alt="Arduino motor shield">
+  <img src="materiel/lego_motor_M.jpeg" height="170" alt="Moteur Lego et volant d'inertie">
 </p>
 
 ## De la mesure à la commande
@@ -75,13 +72,13 @@ flowchart LR
     E --> F["Critère de capturabilité<br>Capture Point + Monte-Carlo"]
 ```
 
-## Déroulé détaillé
+## Projet détaillé
 
 > [!NOTE]
-> **Cliquez sur un bouton pour dérouler l'étape correspondante, ses diapositives et leurs explications.** Le premier bloc est déjà ouvert pour montrer le principe.
+> **Cliquez sur un titre pour dérouler l'étape correspondante, ses diapositives et leurs explications.** Le premier bloc est déjà ouvert pour montrer le principe.
 
 <details open>
-<summary><kbd><b>1 · Problématique</b></kbd></summary>
+<summary><h3>🔵 1 · Problématique</h3></summary>
 
 <br>
 
@@ -92,7 +89,7 @@ Stabiliser un pendule inversé, tout le monde sait le faire avec un chariot. Ici
 </details>
 
 <details>
-<summary><kbd><b>2 · Modélisation</b></kbd></summary>
+<summary><h3>🟢 2 · Modélisation</h3></summary>
 
 <br>
 
@@ -109,7 +106,7 @@ Le schéma-bloc (moteur CC, capteur gyroscopique, mécanique couplée) aboutit �
 </details>
 
 <details>
-<summary><kbd><b>3 · Identification expérimentale</b></kbd></summary>
+<summary><h3>🟠 3 · Identification expérimentale</h3></summary>
 
 <br>
 
@@ -145,7 +142,7 @@ Dernier contrôle — le recoupement physique : les paramètres (masses, distanc
 </details>
 
 <details>
-<summary><kbd><b>4 · Synthèse des correcteurs</b></kbd></summary>
+<summary><h3>🟣 4 · Synthèse des correcteurs</h3></summary>
 
 <br>
 
@@ -172,7 +169,7 @@ Le dimensionnement aboutit aux marges visées sur la FTBO corrigée :
 </details>
 
 <details>
-<summary><kbd><b>5 · Implémentation embarquée et essais</b></kbd></summary>
+<summary><h3>🟡 5 · Implémentation embarquée et essais</h3></summary>
 
 <br>
 
@@ -204,7 +201,7 @@ Vidéos : [premier essai de stabilisation](videos/premier_essai_stabilisation%20
 </details>
 
 <details>
-<summary><kbd><b>6 · Capturabilité</b></kbd></summary>
+<summary><h3>🔴 6 · Capturabilité</h3></summary>
 
 <br>
 
@@ -269,7 +266,7 @@ Perspectives d'optimisation identifiées :
 Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques (diapos 43 à 49).
 
 <details>
-<summary><kbd><b>Annexes</b></kbd></summary>
+<summary><h3>⚫ Annexes</h3></summary>
 
 <br>
 
