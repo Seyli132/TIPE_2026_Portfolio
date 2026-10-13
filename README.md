@@ -1,4 +1,4 @@
-# 🔄 Stabilisation d'un pendule inversé par volant d'inertie
+# Stabilisation d'un pendule inversé par volant d'inertie
 
 ### TIPE 2026 — CPGE PSI — Thème « Cycles & Boucles »
 
@@ -11,11 +11,11 @@
 
 **En une phrase :** j'ai conçu une maquette de pendule inversé stabilisé par volant d'inertie (*reaction wheel*), identifié son modèle dynamique expérimentalement, synthétisé une commande en cascade implémentée en temps réel sur microcontrôleur, puis délimité — par Monte-Carlo — la frontière entre les perturbations rattrapables sans bouger le support et celles qui exigent un pas de récupération (*push recovery*).
 
-🎬 **Portfolio et vidéos expérimentales :** https://seyli132.github.io/TIPE_2026_Portfolio/
+**Portfolio et vidéos expérimentales :** https://seyli132.github.io/TIPE_2026_Portfolio/
 
 ---
 
-## 🌍 Contexte — pourquoi ce sujet ?
+## Contexte
 
 Les robots humanoïdes comme Atlas sont structurellement instables : leur équilibre se réduit à un pendule inversé qu'il faut compenser en permanence. Deux stratégies existent : une **réaction inertielle interne** (volant d'inertie) ou un **déplacement du support** (faire un pas). Ce projet détermine quand l'une suffit et quand l'autre s'impose.
 
@@ -24,7 +24,7 @@ Les robots humanoïdes comme Atlas sont structurellement instables : leur équil
   <img src="photo_equilibre.jpg" height="260" alt="Maquette du pendule inversé à volant d'inertie en position d'équilibre">
 </p>
 
-## 🖼️ La maquette
+## La maquette
 
 ![Maquette du pendule inversé à volant d'inertie](images/diapo0.001.png)
    Composant | Rôle dans la chaîne |
@@ -42,7 +42,7 @@ Les robots humanoïdes comme Atlas sont structurellement instables : leur équil
   <img src="materiel/lego_motor_M.jpeg" width="23%" alt="Moteur Lego et volant d'inertie">
 </p>
 
-## 📐 Architecture du système
+## Architecture du système
 
 **Chaîne d'énergie et d'information — de la mesure à la commande**
 
@@ -57,7 +57,7 @@ Les robots humanoïdes comme Atlas sont structurellement instables : leur équil
 
 ---
 
-## 🧭 Démarche : une boucle complète, du modèle au critère de décision
+## Démarche : une boucle complète, du modèle au critère de décision
 
 ```mermaid
 flowchart LR
@@ -68,12 +68,12 @@ flowchart LR
     E --> F["Critère de capturabilité<br>Capture Point + Monte-Carlo"]
 ```
 
-## 📘 Présentation détaillée du projet
+## Le projet, étape par étape
 
-> 👉 **Cliquez sur chaque titre ci-dessous pour dérouler l'étape, ses diapositives et leurs explications.** Le premier bloc est déjà ouvert pour montrer le principe.
+> **Cliquez sur un bouton pour dérouler l'étape correspondante, ses diapositives et leurs explications.** Le premier bloc est déjà ouvert pour montrer le principe.
 
 <details open>
-<summary><b>1. Problématique</b> — une question de décision, pas seulement de commande</summary>
+<summary><kbd><b>Problématique</b></kbd></summary>
 
 <br>
 
@@ -84,7 +84,7 @@ Stabiliser un pendule inversé, tout le monde sait le faire avec un chariot. Ici
 </details>
 
 <details>
-<summary><b>2. Modélisation</b> — du pendule à volant d'inertie au schéma-bloc</summary>
+<summary><kbd><b>Modélisation</b></kbd></summary>
 
 <br>
 
@@ -101,7 +101,7 @@ Le schéma-bloc (moteur CC, capteur gyroscopique, mécanique couplée) aboutit �
 </details>
 
 <details>
-<summary><b>3. Identification expérimentale</b> — PRBS, MATLAB et validation physique du modèle</summary>
+<summary><kbd><b>Identification expérimentale</b></kbd></summary>
 
 <br>
 
@@ -124,7 +124,7 @@ Deux modèles candidats sont identifiés : **avec inductance** (4 pôles, 2 zér
 
 ![Modèles identifiés : avec inductance (4 pôles, 2 zéros) vs sans inductance (3 pôles, 2 zéros) — solution retenue](images/diapo17.png)
 
-La confrontation modèle théorique ↔ identification est éloquante : les formes coïncident, et l'inversion du signe du terme gravitaire entre pendule simple et pendule inversé se retrouve **exactement** dans les fonctions de transfert identifiées :
+La confrontation modèle théorique ↔ identification est éloquente : les formes coïncident, et l'inversion du signe du terme gravitaire entre pendule simple et pendule inversé se retrouve **exactement** dans les fonctions de transfert identifiées :
 
 $$\text{FTBO identifiée (pendule inversé, inductance négligée)}=\frac{-1{,}431\times 10^{-3}\,p}{1+0{,}2681\,p-0{,}01518\,p^{2}-1{,}192\times 10^{-4}\,p^{3}}$$
 
@@ -137,7 +137,7 @@ Dernier contrôle — le recoupement physique : les paramètres (masses, distanc
 </details>
 
 <details>
-<summary><b>4. Stabiliser la boucle</b> — échec du critère de Routh, puis validation</summary>
+<summary><kbd><b>Synthèse des correcteurs</b></kbd></summary>
 
 <br>
 
@@ -164,7 +164,7 @@ Le dimensionnement aboutit aux marges visées sur la FTBO corrigée :
 </details>
 
 <details>
-<summary><b>5. Implémentation embarquée et essais</b> — ce qui marche, ce qui casse, et pourquoi</summary>
+<summary><kbd><b>Implémentation embarquée et essais</b></kbd></summary>
 
 <br>
 
@@ -191,12 +191,12 @@ Et le **portrait de phase** expérimental — chaque point coloré par la tensio
 
 ![Portrait de phase expérimental coloré par la tension d'actionneur](images/diapo32.png)
 
-🎥 Vidéos : [premier essai de stabilisation](videos/premier_essai_stabilisation%20.mp4) · [identification sur mesures réelles](videos/system_identification_mesures.mp4)
+Vidéos : [premier essai de stabilisation](videos/premier_essai_stabilisation%20.mp4) · [identification sur mesures réelles](videos/system_identification_mesures.mp4)
 
 </details>
 
 <details>
-<summary><b>6. Capturabilité</b> — quand faut-il bouger le support ?</summary>
+<summary><kbd><b>Capturabilité</b></kbd></summary>
 
 <br>
 
@@ -224,7 +224,7 @@ Perspectives d'optimisation identifiées :
 
 ---
 
-## 🛠️ Compétences mobilisées
+## Compétences mobilisées
  | Domaine | Éléments concrets |
  |---|---|
  | Automatique | Analyse harmonique (Bode), critère de Routh-Hurwitz, correcteurs en cascade, avance de phase, marges de stabilité |
@@ -234,18 +234,7 @@ Perspectives d'optimisation identifiées :
  | Programmation | MATLAB, Python (NumPy, pandas, Matplotlib), C++ embarqué (Arduino) |
  | Data / statistique | Méthode de Monte-Carlo, fit quantitatif de modèles sur mesures |
 
-## 📁 Contenu du dépôt
- | Dossier | Contenu |
- |---|---|
- | `index.html` | Portfolio en ligne (vidéos des essais, démonstrations) |
- | `images/` | Photo de la maquette, schémas du système et exports des diapositives du projet (détaillées ci-dessus) |
- | `materiel/` | Photos du matériel (capteur MPU-6500, Arduino, motor shield, moteur) |
- | `videos/` | Essais expérimentaux (stabilisation, identification sur mesures) |
- | `analysis/` | Scripts Python : portrait de phase, région de capture (Monte-Carlo) *(à pousser)* |
- | `firmware/` | Croquis Arduino : filtres IMU + correcteurs discrétisés *(à pousser)* |
- | `docs/` | Diaporama complet du projet *(à ajouter)* |
-
-## 📅 Chronologie du projet
+## Chronologie du projet
  | Période | Étape |
  |---|---|
  | Août 2025 | Choix du thème (robotique et stabilisation) |
@@ -256,7 +245,7 @@ Perspectives d'optimisation identifiées :
  | Mai 2026 | Finalisation des expérimentations |
  | Juin 2026 | Analyse finale et validation du modèle |
 
-## 📚 Bibliographie
+## Bibliographie
 
 [1] J. Pratt et al., *Capture Point: A Step toward Humanoid Push Recovery*, ICHR, 2006 — https://doi.org/10.1109/ICHR.2006.321385
 [2] J. R. C. Vasconcelos et al., *Design and Control of a Flywheel Inverted Pendulum System*.
@@ -265,12 +254,14 @@ Perspectives d'optimisation identifiées :
 [5] R. Olfati-Saber, *Global Stabilization of a Flat Underactuated System*.
 [6] O. Boubaker, R. Iriarte, *The Inverted Pendulum in Control Theory and Robotics*.
 
-## 📎 Annexes techniques
+---
 
-> Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques. **Cliquez pour dérouler.**
+## Annexes techniques
+
+Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques (diapos 43 à 49).
 
 <details>
-<summary><b>Annexes — chaîne fonctionnelle, circuit et démonstrations</b></summary>
+<summary><kbd><b>Annexes</b></kbd></summary>
 
 <br>
 
@@ -306,8 +297,8 @@ Perspectives d'optimisation identifiées :
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **DAOUDI Ilyes Azouz** — CPGE PSI — TIPE 2026
 
-🎬 Portfolio : https://seyli132.github.io/TIPE_2026_Portfolio/
+Portfolio : https://seyli132.github.io/TIPE_2026_Portfolio/
