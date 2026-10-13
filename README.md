@@ -9,11 +9,13 @@
   <img src="https://img.shields.io/badge/Automatique-Routh_%7C_Bode_%7C_Avance_de_phase-6A1B9A?style=flat-square">
 </p>
 
-<p align="center">
-  <img src="Boston_Dynamics_atlas.jpg" height="300" alt="Robot humanoïde Atlas, exemple de système structurellement instable en équilibre dynamique">
-  <img src="photo_equilibre.jpg" height="300" alt="Pierres empilées en équilibre précaire au bord de la mer, analogie du pendule inversé">
-</p>
 
+<table align="center">
+  <tr>
+    <td width="50%"><img src="images/robot.001.png" width="100%" alt="Robot humanoïde Atlas, exemple de système structurellement instable en équilibre dynamique"></td>
+    <td width="50%"><img src="images/equilibre.001.png" width="100%" alt="Pierres empilées en équilibre précaire au bord de la mer, analogie du pendule inversé"></td>
+  </tr>
+</table>
 <p align="center"><i>Gauche : robot Atlas (© Boston Dynamics).</i></p>
 
 > **Problématique :** dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider du recours à un déplacement du support ?
