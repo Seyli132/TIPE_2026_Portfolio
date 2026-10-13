@@ -1,6 +1,6 @@
 <h1 align="center">Stabilisation d'un pendule inversé<br>par volant d'inertie</h1>
 
-<p align="center"><b>TIPE 2026 &nbsp; &nbsp; CPGE PSI &nbsp;|&nbsp; Thème « Cycles et boucles »</b></p>
+<p align="center"><b>TIPE 2026 &nbsp;|&nbsp; CPGE PSI &nbsp;|&nbsp; Thème « Cycles et boucles »</b></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/MATLAB-System_Identification-E16737?style=flat-square">
@@ -14,7 +14,7 @@
   <img src="photo_equilibre.jpg" height="300" alt="Pierres empilées en équilibre précaire au bord de la mer, analogie du pendule inversé">
 </p>
 
-*Gauche : robot Atlas (© Boston Dynamics).*
+<p align="center"><i>Gauche : robot Atlas (© Boston Dynamics).</i></p>
 
 > **Problématique :** dans quelles conditions un système instable modélisé par un pendule inversé peut-il être stabilisé par une boucle de rétroaction inertielle à volant d'inertie, et quels critères physiques permettent de décider du recours à un déplacement du support ?
 
@@ -31,13 +31,14 @@ Le pendule inversé est le modèle instable par excellence : fusée en vol, gyro
 ## Banc d'essai : composants et rôles
 
 ![Maquette du pendule inversé à volant d'inertie](images/diapo0.001.png)
- | Composant | Rôle dans la chaîne |
- |---|---|
- | MPU-6500 (gyroscope + accéléromètre) | Mesure de l'angle θ et de la vitesse angulaire θ̇ |
- | MCC + volant d'inertie | Actionneur : crée un couple interne par réaction inertielle |
- | Arduino Uno R4 WiFi + motor shield | Calcule les correcteurs en temps réel (Te = 20 ms) et pilote le moteur en PWM |
- | Batterie 9 V | Alimentation |
- | Structure Lego | Châssis du pendule |
+
+| Composant | Rôle dans la chaîne |
+|---|---|
+| MPU-6500 (gyroscope + accéléromètre) | Mesure de l'angle θ et de la vitesse angulaire θ̇ |
+| MCC + volant d'inertie | Actionneur : crée un couple interne par réaction inertielle |
+| Arduino Uno R4 WiFi + motor shield | Calcule les correcteurs en temps réel (Te = 20 ms) et pilote le moteur en PWM |
+| Batterie 9 V | Alimentation |
+| Structure Lego | Châssis du pendule |
 
 <p>
   <img src="materiel/capteur%20MPU%206500.png" height="170" alt="Capteur gyroscopique MPU-6500">
@@ -48,9 +49,9 @@ Le pendule inversé est le modèle instable par excellence : fusée en vol, gyro
 
 ## De la mesure à la commande
 
-**Chaîne d'énergie et d'information — de la mesure à la commande**
+**Chaîne d'énergie et d'information**
 
-![](images/chaine_energie_chaine_info.jpg)
+![Chaîne d'énergie et chaîne d'information](images/chaine_energie_chaine_info.jpg)
 
 **Graphe des liaisons et schéma cinématique**
 
@@ -230,33 +231,40 @@ Perspectives d'optimisation identifiées :
 ---
 
 ## Compétences démontrées
- | Domaine | Éléments concrets |
- |---|---|
- | Automatique | Analyse harmonique (Bode), critère de Routh-Hurwitz, correcteurs en cascade, avance de phase, marges de stabilité |
- | Identification expérimentale | Excitation PRBS, critères de Shannon-Nyquist et de Ljung, System Identification Toolbox (MATLAB) |
- | Mécanique | Théorème du moment dynamique, linéarisation, inerties équivalentes, propagation d'incertitudes |
- | Temps réel embarqué | Échantillonnage 50 Hz, discrétisation de Tustin, filtre complémentaire IMU, PWM moteur |
- | Programmation | MATLAB, Python (NumPy, pandas, Matplotlib), C++ embarqué (Arduino) |
- | Data / statistique | Méthode de Monte-Carlo, fit quantitatif de modèles sur mesures |
+
+| Domaine | Éléments concrets |
+|---|---|
+| Automatique | Analyse harmonique (Bode), critère de Routh-Hurwitz, correcteurs en cascade, avance de phase, marges de stabilité |
+| Identification expérimentale | Excitation PRBS, critères de Shannon-Nyquist et de Ljung, System Identification Toolbox (MATLAB) |
+| Mécanique | Théorème du moment dynamique, linéarisation, inerties équivalentes, propagation d'incertitudes |
+| Temps réel embarqué | Échantillonnage 50 Hz, discrétisation de Tustin, filtre complémentaire IMU, PWM moteur |
+| Programmation | MATLAB, Python (NumPy, pandas, Matplotlib), C++ embarqué (Arduino) |
+| Data / statistique | Méthode de Monte-Carlo, fit quantitatif de modèles sur mesures |
 
 ## Calendrier
- | Période | Étape |
- |---|---|
- | Août 2025 | Choix du thème (robotique et stabilisation) |
- | Sept. 2025 | Réduction au modèle du pendule inversé |
- | Oct. 2025 | Étude bibliographique |
- | Déc. 2025 | Problématique et modélisation MATLAB |
- | Janv.–Févr. 2026 | Conception de la maquette, premiers essais |
- | Mai 2026 | Finalisation des expérimentations |
- | Juin 2026 | Analyse finale et validation du modèle |
+
+| Période | Étape |
+|---|---|
+| Août 2025 | Choix du thème (robotique et stabilisation) |
+| Sept. 2025 | Réduction au modèle du pendule inversé |
+| Oct. 2025 | Étude bibliographique |
+| Déc. 2025 | Problématique et modélisation MATLAB |
+| Janv.–Févr. 2026 | Conception de la maquette, premiers essais |
+| Mai 2026 | Finalisation des expérimentations |
+| Juin 2026 | Analyse finale et validation du modèle |
 
 ## Bibliographie
 
 [1] J. Pratt et al., *Capture Point: A Step toward Humanoid Push Recovery*, IEEE-RAS International Conference on Humanoid Robots (ICHR), 2006 — https://doi.org/10.1109/ICHR.2006.321385
+
 [2] J. R. C. Vasconcelos, E. M. Astorga González, P. M. G. del Foyo, *Design and Control of a Flywheel Inverted Pendulum System*, Congresso Brasileiro de Automática (CBA), 2019 — https://www.sba.org.br/open_journal_systems/index.php/cba/article/download/390/354/
+
 [3] M. Olivares, P. Albertos, *Linear control of the flywheel inverted pendulum*, Systems & Control Letters, 2013 — https://doi.org/10.1016/j.sysconle.2013.05.010
+
 [4] A. Chemori et al., *Le pendule inversé stabilisé par volant d'inertie* — https://www.academia.edu/23380289
+
 [5] R. Olfati-Saber, *Global Stabilization of a Flat Underactuated System: the Inertia Wheel Pendulum*, 40th IEEE Conference on Decision and Control (CDC), 2001 — https://authors.library.caltech.edu/records/be5gg-jbe32
+
 [6] O. Boubaker, R. Iriarte (dir.), *The Inverted Pendulum in Control Theory and Robotics: From Theory to New Innovations*, IET, 2017 — https://doi.org/10.1049/pbce111e
 
 ---
