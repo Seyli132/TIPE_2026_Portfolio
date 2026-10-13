@@ -20,11 +20,13 @@
 Les robots humanoïdes comme Atlas sont structurellement instables : leur équilibre se réduit à un pendule inversé qu'il faut compenser en permanence. Deux stratégies existent : une **réaction inertielle interne** (volant d'inertie) ou un **déplacement du support** (faire un pas). Ce projet détermine quand l'une suffit et quand l'autre s'impose.
 
 <p>
-  <img src="Boston_Dynamics_atlas.jpg" width="42%" alt="Robot humanoïde Atlas (Boston Dynamics), exemple de système instable en équilibre dynamique">
-  <img src="photo_equilibre.jpg" width="42%" alt="Maquette du pendule inversé à volant d'inertie en position d'équilibre">
+  <img src="Boston_Dynamics_atlas.jpg" height="260" alt="Robot humanoïde Atlas (Boston Dynamics), exemple de système instable en équilibre dynamique">
+  <img src="photo_equilibre.jpg" height="260" alt="Maquette du pendule inversé à volant d'inertie en position d'équilibre">
 </p>
 
 ## 🖼️ La maquette
+
+![Maquette du pendule inversé à volant d'inertie](images/diapo0.001.png)
    Composant | Rôle dans la chaîne |
  |---|---|
  | MPU-6500 (gyroscope + accéléromètre) | Mesure de l'angle θ et de la vitesse angulaire θ̇ |
@@ -41,9 +43,17 @@ Les robots humanoïdes comme Atlas sont structurellement instables : leur équil
 </p>
 
 ## 📐 Architecture du système
- | Chaîne d'énergie et d'information | Graphe des liaisons | Schéma cinématique |
- |---|---|---|
- | ![](images/chaine_energie_chaine_info.jpg) | ![](images/graphe_des_liaisons.jpg) | ![](images/schema_cinematique.jpg) |
+
+**Chaîne d'énergie et d'information — de la mesure à la commande**
+
+![](images/chaine_energie_chaine_info.jpg)
+
+**Graphe des liaisons et schéma cinématique**
+
+<p>
+  <img src="images/graphe_des_liaisons.jpg" width="49%" alt="Graphe des liaisons du pendule inversé à volant d'inertie">
+  <img src="images/schema_cinematique.jpg" width="49%" alt="Schéma cinématique du pendule inversé à volant d'inertie">
+</p>
 
 ---
 
@@ -60,9 +70,9 @@ flowchart LR
 
 ## 📘 Présentation détaillée du projet
 
-Chaque étape est dépliable : les diapositives du projet y sont commentées avec les résultats et justifications associés.
+> 👉 **Cliquez sur chaque titre ci-dessous pour dérouler l'étape, ses diapositives et leurs explications.** Le premier bloc est déjà ouvert pour montrer le principe.
 
-<details>
+<details open>
 <summary><b>1. Problématique</b> — une question de décision, pas seulement de commande</summary>
 
 <br>
@@ -228,7 +238,7 @@ Perspectives d'optimisation identifiées :
  | Dossier | Contenu |
  |---|---|
  | `index.html` | Portfolio en ligne (vidéos des essais, démonstrations) |
- | `images/` | Schémas du système + exports des diapositives du projet (détaillées ci-dessus) |
+ | `images/` | Photo de la maquette, schémas du système et exports des diapositives du projet (détaillées ci-dessus) |
  | `materiel/` | Photos du matériel (capteur MPU-6500, Arduino, motor shield, moteur) |
  | `videos/` | Essais expérimentaux (stabilisation, identification sur mesures) |
  | `analysis/` | Scripts Python : portrait de phase, région de capture (Monte-Carlo) *(à pousser)* |
@@ -257,19 +267,40 @@ Perspectives d'optimisation identifiées :
 
 ## 📎 Annexes techniques
 
+> Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques. **Cliquez pour dérouler.**
+
 <details>
-<summary><b>Chaîne fonctionnelle, circuit et démonstrations</b></summary>
+<summary><b>Annexes — chaîne fonctionnelle, circuit et démonstrations</b></summary>
 
 <br>
- | Annexe | Contenu |
- |---|---|
- | [Chaîne fonctionnelle](images/diapo43.png) | De la mesure gyroscope à la commande moteur, vue d'ensemble |
- | [Circuit électrique](images/diapo44.png) | MCC, motor shield, alimentation 9 V |
- | [Équations du schéma-bloc](images/diapo45.png) | Théorèmes du moment dynamique et linéarisation |
- | [Justification du signal PRBS](images/diapo46.png) | Choix des fréquences : critère de Ljung, Shannon-Nyquist, stratégie PWM |
- | [Critère de Routh-Hurwitz](images/diapo47.png) | Condition de stabilité d'ordre 3 et ajustabilité des paramètres |
- | [Justification de l'inertie rotorique](images/diapo48.png) | Loi des mailles au MCC et moment cinétique de l'arbre moteur |
- | [Région de capture : démonstration et fit](images/diapo49.png) | Changement de variable, séparatrice, formule du fit |
+
+**Chaîne fonctionnelle** — de la mesure gyroscope à la commande moteur
+
+![Chaîne fonctionnelle](images/diapo43.png)
+
+**Circuit électrique** — MCC, motor shield, alimentation 9 V
+
+![Circuit électrique](images/diapo44.png)
+
+**Équations du schéma-bloc** — théorèmes du moment dynamique et linéarisation
+
+![Équations du schéma-bloc](images/diapo45.png)
+
+**Justification du signal PRBS** — critères de Ljung et Shannon-Nyquist, stratégie PWM
+
+![Justification du signal PRBS](images/diapo46.png)
+
+**Critère de Routh-Hurwitz** — condition de stabilité d'ordre 3, ajustabilité des paramètres
+
+![Critère de Routh-Hurwitz](images/diapo47.png)
+
+**Justification de l'inertie rotorique** — loi des mailles au MCC, moment cinétique de l'arbre moteur
+
+![Justification de l'inertie rotorique](images/diapo48.png)
+
+**Région de capture : démonstration et fit** — changement de variable, séparatrice, formule du fit
+
+![Région de capture : démonstration et fit](images/diapo49.png)
 
 </details>
 
