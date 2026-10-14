@@ -273,7 +273,7 @@ Perspectives d'optimisation identifiées :
 
 ## Annexes techniques
 
-Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques (diapos 43 à 49).
+Démonstrations détaillées : chaîne fonctionnelle, circuit, et justifications mathématiques.
 
 <details>
 <summary><h3>⚫ Annexes</h3></summary>
